@@ -2,6 +2,7 @@
 #define US_PUB_H
 #include<iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 class Usuario{
@@ -27,7 +28,11 @@ class Publicacao{
         string titulo;
         string editora;
         int ano;
+    public:
+        Publicacao(int cod, string tit, string ed, int an) : codPublicacao(cod), titulo(tit), editora(ed), ano(an){}
+       void imprimirPub(){cout << "codigo publicacao: " << codPublicacao << ", titulo: " << titulo << ", editora: " << editora << ", ano: " << ano << endl;}
 
 };
+
 
 #endif // US_PUB_H

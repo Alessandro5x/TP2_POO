@@ -10,13 +10,13 @@ class Emprestimo
 {
     private:
         int numero;
-        Date Date;
+        Date DataEmprestimo;
         Date DataPrevDevolucao;
         Usuario usuario;
-        //Itememprestimo itens;
+        // vector <ItemEmprestimo> itens;
         static int proximoNumero;
-
     public:
+        //Emprestimo(int n, Date DE, Date PD, Usuario &u);
 
 };
 

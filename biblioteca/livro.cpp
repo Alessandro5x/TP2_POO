@@ -3,17 +3,11 @@
 #include "livro.h"
 #include "excecoes.h"
 #include "us_pub.h"
-
 using namespace std;
-livro::livro(string a, int q)
-{
-    autores = a;
-    qtdeExemplares = q;
-}
-
 
 void livro::imprimirlivro(){
     cout<< "autores: " << autores << "| Quantidade:" << qtdeExemplares << endl;
+    imprimirPub();
 }
 
 void livro::incrementar(int i){
