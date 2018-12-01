@@ -26,5 +26,23 @@ class Publicacao{
         int ano;
 
 };
+class ItemEmprestimo{
+    private:
+        Date dataDevolucao;
+        livro livro;
+    public:
+        ItemEmprestimo(livro liv);
+};
+class livro : Publicacao
+{
+    private:
+        string autores;
+        int qtdeExemplares;
+    public:
+        livro(string a, int q);
+        void imprimirlivro(); //TESTE APAGAR DEPOOIS
+        void incrementar(int i);
+        void decrementar(int d);
+};
 
 #endif // TP2_H
