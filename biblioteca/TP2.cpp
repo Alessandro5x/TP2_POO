@@ -1,5 +1,6 @@
 #include<iostream>
 #include "TP2.h"
+#include <vector>
 
 using namespace std;
 
@@ -31,6 +32,18 @@ void livro::decrementar(int d){
 ItemEmprestimo::ItemEmprestimo(livro liv){
     livro = liv;
     dataDevolucao = null;
+}
+Biblioteca::Biblioteca(){
+    usuarios = {};
+    livros = {};
+    emprestimos = {};
 
 }
+Biblioteca::Biblioteca(Usuario use){ usuarios.push_back(use);}
+
+Biblioteca::Biblioteca(Publicacao pub){ livros.push_back(pub);}
+
+Biblioteca::Biblioteca(ItemEmprestimo item){ emprestimos.push_back(item);}
+
+
 

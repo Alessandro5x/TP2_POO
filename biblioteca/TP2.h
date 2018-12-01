@@ -1,5 +1,7 @@
 #ifndef TP2_H
 #define TP2_H
+#include <iostream>
+#include <vector>
 
 class Usuario{
 
@@ -43,6 +45,20 @@ class livro : Publicacao
         void imprimirlivro(); //TESTE APAGAR DEPOOIS
         void incrementar(int i);
         void decrementar(int d);
+};
+class Biblioteca{
+    private:
+        vector<Usuario> usuarios;
+        vector<Publicacao> livros;
+        vector<ItemEmprestimo> emprestimos;
+    public:
+        Biblioteca();
+        Biblioteca(Usuario use);
+        Biblioteca(Publicacao pub);
+        Biblioteca(ItemEmprestimo Item);
+
+
+
 };
 
 #endif // TP2_H
