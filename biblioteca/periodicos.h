@@ -5,7 +5,7 @@
 #include "us_pub.h"
 using namespace std;
 
-class periodicos : Publicacao
+class periodicos : public Publicacao
 {
       private:
         string mes;

@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 #include "us_pub.h"
+#include "livro.h"
+
 using namespace std;
 
 class Emprestimo
@@ -18,6 +20,14 @@ class Emprestimo
     public:
         //Emprestimo(int n, Date DE, Date PD, Usuario &u);
 
+};
+
+class ItemEmprestimo{
+    private:
+        Date dataDevolucao;
+        Livro livros;
+    public:
+        ItemEmprestimo(Livro L);
 };
 
 
