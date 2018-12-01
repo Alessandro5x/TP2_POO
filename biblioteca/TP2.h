@@ -2,6 +2,7 @@
 #define TP2_H
 #include <iostream>
 #include <vector>
+using namespace std;
 
 class Usuario{
 
@@ -28,14 +29,7 @@ class Publicacao{
         int ano;
 
 };
-class ItemEmprestimo{
-    private:
-        Date dataDevolucao;
-        livro livro;
-    public:
-        ItemEmprestimo(livro liv);
-};
-class livro : Publicacao
+class Livro : public Publicacao
 {
     private:
         string autores;
@@ -46,6 +40,29 @@ class livro : Publicacao
         void incrementar(int i);
         void decrementar(int d);
 };
+
+class ItemEmprestimo{
+    private:
+        Date dataDevolucao;
+        Livro livro;
+    public:
+        ItemEmprestimo(Livro liv);
+};
+
+class Emprestimo
+{
+    private:
+        int numero;
+        Date DataEmprestimo;
+        Date DataPrevDevolucao;
+        Usuario usuario;
+        vector <ItemEmprestimo> itens;
+        static int proximoNumero;
+    public:
+        //Emprestimo(int n, Date DE, Date PD, Usuario &u);
+
+};
+
 class Biblioteca{
     private:
         vector<Usuario> usuarios;
@@ -53,9 +70,19 @@ class Biblioteca{
         vector<ItemEmprestimo> emprestimos;
     public:
         Biblioteca();
-        Biblioteca(Usuario use);
-        Biblioteca(Publicacao pub);
-        Biblioteca(ItemEmprestimo Item);
+        void adduser(Usuario use);
+        void addpub(Publicacao pub);
+        void addemp(Emprestimo emp);
+        void additememp(Emprestimo emp, ItemEmprestimo item);
+        //void deleteuser(Usuario use);
+        //void deletepub(Publicacao pub);
+        //void deleteemp(Emprestimo emp);
+        //void deleteitem(Emprestimo emp, ItemEmprestimo item);
+        //void giveback(Emprestimo emp);
+        void getUsuarios();
+        void getPublicacoes();
+        void getEmprestimos();
+
 
 
 
