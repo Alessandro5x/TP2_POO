@@ -13,10 +13,18 @@ class Usuario{
         Usuario(string n, string cp, string ende, string fon);
 };
 class Date{
-private:
-    int dia;
-    int mes;
-    int ano;
+    private:
+        int dia;
+        int mes;
+        int ano;
+};
+class Publicacao{
+    private:
+        int codPublicacao;
+        string titulo;
+        string editora;
+        int ano;
+
 };
 
 #endif // TP2_H
