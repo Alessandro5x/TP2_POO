@@ -8,13 +8,13 @@
 
 Biblioteca::Biblioteca(){
     usuarios = {};
-    livros = {};
+    publicacoes = {};
     emprestimos = {};
 
 }
 void Biblioteca::adduser(Usuario &use){ usuarios.push_back(use);}
 
-void Biblioteca::addpub(Publicacao &pub){ livros.push_back(pub);}
+void Biblioteca::addpub(Publicacao &pub){ publicacoes.push_back(pub);}
 
 void Biblioteca::addemp(Emprestimo &emp){ emprestimos.push_back(emp);}
 
@@ -35,8 +35,8 @@ void Biblioteca::deleteuser(Usuario &use){
 }
 /*
 int Biblioteca::searchpub(Publicacao& pub){
-     for(int i = 0; i <= livros.size();i++){
-        if(pub.codPublicacao == livros[i].codPublicacao){
+     for(int i = 0; i <= publicacoes.size();i++){
+        if(pub.codPublicacao == publicacoes[i].codPublicacao){
             return i;
     }else return -1;
 }}
@@ -70,10 +70,10 @@ void Biblioteca::givebackall(Emprestimo &emp){
 vector<string> Biblioteca::searchtitle(string t){
     vector <string> result;
     int aux=-1;
-    for (int i = 0;i<livros.size();i++){
-        aux = livros[i].gettitulo().compare(t);
+    for (int i = 0;i<publicacoes.size();i++){
+        aux = publicacoes[i].gettitulo().compare(t);
         if(aux==t.size()-1){
-            result.push_back(livros[i].gettitulo());
+            result.push_back(publicacoes[i].gettitulo());
         }
         return result;
     }
@@ -81,10 +81,10 @@ vector<string> Biblioteca::searchtitle(string t){
 vector<string> Biblioteca::searchautor(string a){
     vector <string> result;
     int aux=-1;
-    for (int i = 0;i<livros.size();i++){
-        aux = livros[i].getAutor().compare(a);
+    for (int i = 0;i<publicacoes.size();i++){
+        aux = publicacoes[i].getAutor().compare(a);
         if(aux==a.size()-1){
-            result.push_back(livros[i].getAutor());
+            result.push_back(publicacoes[i].getAutor());
         }
         return result;
     }
@@ -97,7 +97,7 @@ vector<Usuario> Biblioteca::getUsuarios(){
 
 vector<Publicacao> Biblioteca::getPublicacoes(){
 
-    return livros;
+    return publicacoes;
 }
 
 vector<Emprestimo> Biblioteca::getEmprestimos(){
@@ -109,8 +109,8 @@ void Biblioteca::savefile(){
     for(int i = 0;i < usuarios.size();i++){
         out << "Usuarios: " << usuarios[i].getName() << ";";
     }
-    for(int i = 0;i < livros.size();i++){
-        out << "livros: " << livros[i].gettitulo() << ",";
+    for(int i = 0;i < publicacoes.size();i++){
+        out << "Publicacoes: " << publicacoes[i].gettitulo() << ",";
     }
     for(int i = 0;i < emprestimos.size();i++){
         out << "Emprestimos: " << emprestimos[i].getNumero() << ",";

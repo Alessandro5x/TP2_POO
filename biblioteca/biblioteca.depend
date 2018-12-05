@@ -155,7 +155,7 @@
 	<string>
 	"us_pub.h"
 
-1544054704 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\biblioteca.h
+1544054876 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\biblioteca.h
 	<iostream>
 	<vector>
 	"livro.h"
@@ -184,8 +184,9 @@
 	"us_pub.h"
 	<vector>
 
-1544041011 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\biblioteca.cpp
+1544054683 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\biblioteca.cpp
 	<iostream>
+	<fstream>
 	"biblioteca.h"
 	<vector>
 	"us_pub.h"

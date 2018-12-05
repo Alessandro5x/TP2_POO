@@ -11,7 +11,7 @@ using namespace std;
 class Biblioteca{
     private:
         vector<Usuario> usuarios;
-        vector<Publicacao> livros;
+        vector<Publicacao> publicacoes;
         vector<Emprestimo> emprestimos;
     public:
         Biblioteca();
