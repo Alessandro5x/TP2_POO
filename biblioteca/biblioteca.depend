@@ -65,7 +65,7 @@
 	"us_pub.h"
 	"livro.h"
 
-1543978340 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\emprestimo.cpp
+1543986142 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\emprestimo.cpp
 	<iostream>
 	<string>
 	<vector>
@@ -73,12 +73,12 @@
 	"livro.h"
 	"Emprestimo.h"
 
-1543984394 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\us_pub.h
+1543987549 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\us_pub.h
 	<iostream>
 	<string>
 	<vector>
 
-1543953204 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\livro.h
+1543986043 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\livro.h
 	<iostream>
 	<string>
 	"excecoes.h"
@@ -88,7 +88,7 @@
 	<iostream>
 	<string>
 
-1543978340 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\emprestimo.h
+1543986120 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\emprestimo.h
 	<iostream>
 	<string>
 	<vector>
@@ -100,7 +100,7 @@
 	<string>
 	"excecoes.h"
 
-1543953204 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\livro.cpp
+1543987549 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\livro.cpp
 	<iostream>
 	<string>
 	"livro.h"
@@ -120,13 +120,13 @@
 	<string>
 	"us_pub.h"
 
-1543953204 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\us_pub.cpp
+1543984394 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\us_pub.cpp
 	<iostream>
 	<string>
 	"us_pub.h"
 	<vector>
 
-1543984317 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\biblioteca.cpp
+1543987335 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\biblioteca.cpp
 	<iostream>
 	"biblioteca.h"
 	<vector>
@@ -134,7 +134,7 @@
 	"livro.h"
 	"Emprestimo.h"
 
-1543984360 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\biblioteca.h
+1543986376 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\master\biblioteca\biblioteca.h
 	<iostream>
 	<vector>
 	"livro.h"

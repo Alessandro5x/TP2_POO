@@ -15,6 +15,7 @@ class ItemEmprestimo{
     public:
         ItemEmprestimo(Livro &L) : livro(L){dataDevolucao = Date(0,0,0);}
         void printItemEmprestimo(){livro.imprimirlivro();}
+        Livro getL(){return livro;}
 };
 
 
@@ -33,7 +34,7 @@ class Emprestimo
        void excluiE(Livro &l);
        void devolver(Livro &l);
        void devolverT();
-       void printemprestimo(){cout << itens.size()<<endl; itens[0].printItemEmprestimo();}
+       void printemprestimo(){for(int i = 0; i < itens.size(); i++){itens[i].printItemEmprestimo(); cout<<"\n";}}
 
 };
 

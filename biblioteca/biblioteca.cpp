@@ -27,7 +27,23 @@ int Biblioteca::searchuser(Usuario &user){
     }else return -1;
 }}
 
+void Biblioteca::deleteuser(Usuario &use){
+    if (searchuser(use) >=0){
+    usuarios.erase(usuarios.begin() + searchuser(use));}
+    else throw "Usuario com emprestimo";
+}/*
+int Biblioteca::searchpub(Publicacao& pub){
+     for(int i = 0; i <= emprestimos.size();i++){
+        if(pub == itens[i].getL()){
+            return i;
+    }else return -1;
+}}
 
+
+void Biblioteca::deletepub(Publicacao& pub){
+    if()
+
+}*/
 
 vector<Usuario> Biblioteca::getUsuarios(){
 

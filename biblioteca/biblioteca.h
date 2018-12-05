@@ -20,8 +20,9 @@ class Biblioteca{
         void addemp(Emprestimo &emp);
         //void additememp(Emprestimo emp, ItemEmprestimo item);
         int searchuser(Usuario &user);
-        void deleteuser(Usuario use);
-        //void deletepub(Publicacao pub);
+        void deleteuser(Usuario &use);
+        int searchpub(Publicacao &pub);
+        void deletepub(Publicacao &pub);
         //void deleteemp(Emprestimo emp);
         //void deleteitem(Emprestimo emp, ItemEmprestimo item);
         //void giveback(Emprestimo emp);

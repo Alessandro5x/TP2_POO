@@ -18,12 +18,22 @@ void Emprestimo::adicionaE(Livro &l){
 }
 
 void Emprestimo::excluiE(Livro &l){
+
     l.incrementar(1);
+
+    for(int i = 0; i < itens.size(); i++){
+      if(l == itens[i].getL()){
+        itens.erase(itens.begin()+i);
+      }
+    }
 
 }
 void Emprestimo::devolver(Livro &l){
+     l.incrementar(1);
 
+    //DataPrevDevolucao = data de agora
 }
 void Emprestimo::devolverT(){
-
+   // Livro l = itens[1].getL();
+    //devolver(l);
 }
