@@ -11,6 +11,7 @@ Usuario::Usuario(string n, string cp, string ende, string fon){
     fone = fon;
 }
 
+/*
 Usuario::Usuario(const Usuario &U){
 
     this->nome = U.nome;
@@ -30,3 +31,14 @@ Usuario &Usuario::operator=(const Usuario &u){
    return *this;
 
 }
+*/
+
+/*
+Publicacao::Publicacao(const Publicacao &P){
+    codPublicacao = P.codPublicacao;
+    titulo = P.titulo;
+    editora = P.editora;
+    ano = P.ano;
+
+}
+*/

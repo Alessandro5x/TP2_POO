@@ -10,6 +10,20 @@ void Livro::imprimirlivro(){
     imprimirPub();
 }
 
+/*
+Livro::Livro(const Livro &L){
+
+    this->autores = L.autores;
+    this->qtdeExemplares = L.qtdeExemplares;
+    this->getcod() = L.getcod();
+    this->gettitulo() = L.gettitulo();
+    this->geted() = L.geted();
+    this->getano() = L.getano();
+
+}
+*/
+
+
 void Livro::incrementar(int i){
     qtdeExemplares = qtdeExemplares + i;
 }
@@ -17,4 +31,11 @@ void Livro::incrementar(int i){
 void Livro::decrementar(int d){
     if( qtdeExemplares - d < 0) throw ErroG("\n<ERRO> Decrementacao maior que qtd de exemplares");
     qtdeExemplares = qtdeExemplares - d;
+}
+
+bool Livro::operator ==(const Livro&a){
+    if(this->autores != a.autores || this->getcod() != a.getcod() || this->getano() != a.getano() || this->gettitulo() != a.gettitulo()){
+       return false;
+    }
+    return true;
 }

@@ -34,6 +34,10 @@
 		</Compiler>
 		<Unit filename="Emprestimo.cpp" />
 		<Unit filename="Emprestimo.h" />
+		<Unit filename="Interface.cpp" />
+		<Unit filename="Interface.h" />
+		<Unit filename="biblioteca.cpp" />
+		<Unit filename="biblioteca.h" />
 		<Unit filename="excecoes.cpp" />
 		<Unit filename="excecoes.h" />
 		<Unit filename="livro.cpp" />

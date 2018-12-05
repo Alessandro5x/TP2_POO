@@ -1,19 +1,20 @@
 # depslib dependency file v1.0
-1543971987 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\main.cpp
+1543992879 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\main.cpp
 	<iostream>
 	<string>
 	"livro.h"
 	"periodicos.h"
 	"excecoes.h"
 	"emprestimo.h"
+	"interface.h"
 
-1543705557 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\livro.h
+1543988379 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\livro.h
 	<iostream>
 	<string>
 	"excecoes.h"
 	"us_pub.h"
 
-1543705612 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\livro.cpp
+1543988379 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\livro.cpp
 	<iostream>
 	<string>
 	"livro.h"
@@ -39,18 +40,18 @@
 	<iostream>
 	<string>
 
-1543963177 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\us_pub.cpp
+1543988659 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\us_pub.cpp
 	<iostream>
 	<string>
 	"us_pub.h"
 	<vector>
 
-1543963545 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\us_pub.h
+1543988659 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\us_pub.h
 	<iostream>
 	<string>
 	<vector>
 
-1543971671 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\emprestimo.cpp
+1543988521 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\emprestimo.cpp
 	<iostream>
 	<string>
 	<vector>
@@ -58,10 +59,42 @@
 	"livro.h"
 	"Emprestimo.h"
 
-1543974342 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\emprestimo.h
+1543988487 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\emprestimo.h
 	<iostream>
 	<string>
 	<vector>
 	"us_pub.h"
 	"livro.h"
+
+1543992317 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\interface.cpp
+	<iostream>
+	<string>
+	<vector>
+	<stdlib.h>
+	"Interface.h"
+
+1543993400 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\interface.h
+	<iostream>
+	<string>
+	<vector>
+	"Emprestimo.h"
+	"livro.h"
+	"us_pub.h"
+	"periodicos.h"
+	"biblioteca.h"
+
+1543966216 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\biblioteca.cpp
+	<iostream>
+	"biblioteca.h"
+	<vector>
+	"us_pub.h"
+	"livro.h"
+	"Emprestimo.h"
+
+1543993263 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\biblioteca.h
+	<iostream>
+	<vector>
+	"livro.h"
+	"us_pub.h"
+	"Emprestimo.h"
 

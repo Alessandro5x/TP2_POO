@@ -10,11 +10,12 @@ using namespace std;
 
 class ItemEmprestimo{
     private:
-        Date dataDevolucao = null;
+        Date dataDevolucao;
         Livro livro;
     public:
-        ItemEmprestimo(Livro &L) : livro(L){}
-
+        ItemEmprestimo(Livro &L) : livro(L){dataDevolucao = Date(0,0,0);}
+        void printItemEmprestimo(){livro.imprimirlivro();}
+        Livro getL(){return livro;}
 };
 
 
@@ -29,10 +30,13 @@ class Emprestimo
         static int proximoNumero;
     public:
        Emprestimo(Date DP, const Usuario &u);
+       ~Emprestimo();
        void adicionaE(Livro &l);
        void excluiE(Livro &l);
        void devolver(Livro &l);
        void devolverT();
+       void printemprestimo(){for(int i = 0; i < itens.size(); i++){itens[i].printItemEmprestimo(); cout<<"\n";}}
+
 };
 
 
