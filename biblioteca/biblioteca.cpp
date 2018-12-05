@@ -43,7 +43,7 @@ int Biblioteca::searchpub(Publicacao& pub){
 
 /*
 void Biblioteca::deletepub(Publicacao& pub){
-    if()
+    if() vector <Publicacoes*>
 
 }*/
 int Biblioteca::searchemp(Emprestimo &emp){
