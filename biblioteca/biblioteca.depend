@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1543705557 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\main.cpp
+1543971987 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\main.cpp
 	<iostream>
 	<string>
 	"livro.h"
 	"periodicos.h"
 	"excecoes.h"
+	"emprestimo.h"
 
 1543705557 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\livro.h
 	<iostream>
@@ -38,25 +39,26 @@
 	<iostream>
 	<string>
 
-1543703765 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\us_pub.cpp
+1543963177 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\us_pub.cpp
 	<iostream>
 	<string>
 	"us_pub.h"
 	<vector>
 
-1543703843 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\us_pub.h
+1543963545 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\us_pub.h
 	<iostream>
 	<string>
 	<vector>
 
-1543703099 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\emprestimo.cpp
+1543971671 source:d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\emprestimo.cpp
 	<iostream>
 	<string>
 	<vector>
 	"us_pub.h"
+	"livro.h"
 	"Emprestimo.h"
 
-1543705920 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\emprestimo.h
+1543974342 d:\livros, exercícios e afins\poo\tp2\biblioteca\biblioteca\emprestimo.h
 	<iostream>
 	<string>
 	<vector>

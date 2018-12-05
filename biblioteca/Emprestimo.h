@@ -8,6 +8,16 @@
 
 using namespace std;
 
+class ItemEmprestimo{
+    private:
+        Date dataDevolucao;
+        Livro livro;
+    public:
+        ItemEmprestimo(Livro &L) : livro(L){}
+
+};
+
+
 class Emprestimo
 {
     private:
@@ -15,20 +25,16 @@ class Emprestimo
         Date DataEmprestimo;
         Date DataPrevDevolucao;
         Usuario usuario;
-        // vector <ItemEmprestimo> itens;
+        vector <ItemEmprestimo> itens;
         static int proximoNumero;
     public:
-        //Emprestimo(int n, Date DE, Date PD, Usuario &u);
-
+       Emprestimo(Date DP, const Usuario &u);
+       void adicionaE(Livro &l);
+       void excluiE(Livro &l);
+       void devolver(Livro &l);
+       void devolverT();
 };
 
-class ItemEmprestimo{
-    private:
-        Date dataDevolucao;
-        Livro livros;
-    public:
-        ItemEmprestimo(Livro L);
-};
 
 
 #endif // EMPRESTIMO_H_INCLUDED

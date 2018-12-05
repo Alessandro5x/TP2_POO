@@ -15,12 +15,17 @@ class Usuario{
 
     public:
         Usuario(string n, string cp, string ende, string fon);
+        Usuario(const Usuario& U);
+        Usuario &operator= (const Usuario &u);
+        void Printusuario(){cout<< nome <<", "<< cpf <<", "<< endereco <<", "<< fone << endl;}
 };
 class Date{
     private:
         int dia;
         int mes;
         int ano;
+    public:
+        Date(int d = 0, int m = 0, int a = 0) : dia(d), mes(m), ano(a){}
 };
 class Publicacao{
     private:
