@@ -18,7 +18,8 @@ class Usuario{
         Usuario(const Usuario& U);
         Usuario &operator= (const Usuario &u);
         void Printusuario(){cout<< nome <<", "<< cpf <<", "<< endereco <<", "<< fone << endl;}
-        string getCPF();
+        string getCPF(){ return cpf;}
+}
 };
 class Date{
     private:
