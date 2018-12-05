@@ -18,6 +18,7 @@ class Usuario{
         Usuario(const Usuario& U);
         Usuario &operator= (const Usuario &u);
         void Printusuario(){cout<< nome <<", "<< cpf <<", "<< endereco <<", "<< fone << endl;}
+        string getCPF(){return cpf;};
 };
 class Date{
     private:
@@ -35,8 +36,10 @@ class Publicacao{
         int ano;
     public:
         Publicacao(int cod, string tit, string ed, int an) : codPublicacao(cod), titulo(tit), editora(ed), ano(an){}
-       void imprimirPub(){cout << "codigo publicacao: " << codPublicacao << ", titulo: " << titulo << ", editora: " << editora << ", ano: " << ano << endl;}
-
+        void imprimirPub(){cout << "codigo publicacao: " << codPublicacao << ", titulo: " << titulo << ", editora: " << editora << ", ano: " << ano << endl;}
+        int getcod()const{return codPublicacao;}
+        string gettitulo()const{return titulo;}
+        int getano() const{return ano;}
 };
 
 

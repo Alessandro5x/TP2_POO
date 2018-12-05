@@ -19,7 +19,7 @@ class Livro : public Publicacao
         //Livro(const Livro& L);
         void incrementar(int i);
         void decrementar(int d);
-
+        bool operator== (const Livro &L);
 };
 
 #endif
