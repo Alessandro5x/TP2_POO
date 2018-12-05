@@ -11,6 +11,10 @@ Emprestimo::Emprestimo(Date DP, const Usuario &u) : usuario(u),DataPrevDevolucao
     /*data emprestimo = do sistema;*/
 
 }
+Emprestimo::~Emprestimo()
+{
+   itens.clear();
+}
 
 void Emprestimo::adicionaE(Livro &l){
     l.decrementar(1);
@@ -22,7 +26,7 @@ void Emprestimo::excluiE(Livro &l){
     l.incrementar(1);
 
     for(int i = 0; i < itens.size(); i++){
-      if(l == itens[i].getL()){
+      if(l == itens[i].livro){
         itens.erase(itens.begin()+i);
       }
     }
@@ -30,10 +34,11 @@ void Emprestimo::excluiE(Livro &l){
 }
 void Emprestimo::devolver(Livro &l){
      l.incrementar(1);
-
     //DataPrevDevolucao = data de agora
 }
 void Emprestimo::devolverT(){
-   // Livro l = itens[1].getL();
-    //devolver(l);
+   for(int i = 0; i < itens.size(); i++){
+        //Livro l = itens[i].getL();
+        //devolver(l);
+   }
 }

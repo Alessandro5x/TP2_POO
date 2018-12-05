@@ -18,17 +18,22 @@ class Biblioteca{
         void adduser(Usuario &use);
         void addpub(Publicacao &pub);
         void addemp(Emprestimo &emp);
-        //void additememp(Emprestimo emp, ItemEmprestimo item);
+        void additememp(Emprestimo emp, ItemEmprestimo item);
         int searchuser(Usuario &user);
         void deleteuser(Usuario &use);
         int searchpub(Publicacao &pub);
         void deletepub(Publicacao &pub);
-        //void deleteemp(Emprestimo emp);
-        //void deleteitem(Emprestimo emp, ItemEmprestimo item);
-        //void giveback(Emprestimo emp);
+        int searchemp(Emprestimo &emp);
+        void deleteemp(Emprestimo &emp);
+        void deleteitememp(Emprestimo emp, ItemEmprestimo item);
+        void giveback(Emprestimo emp, Livro liv);// OlHAR A PARADA DA DATA
+        void givebackall(Emprestimo &emp);
+        vector <string> searchtitle(string t);
         vector <Usuario> getUsuarios();
         vector <Publicacao> getPublicacoes();
         vector <Emprestimo> getEmprestimos();
+
+        void printtodosusuarios(){for(int i = 0; i < usuarios.size(); i++){usuarios[i].Printusuario(); cout<<"\n";}}
 
 
 };

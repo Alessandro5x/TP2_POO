@@ -15,8 +15,8 @@ class Usuario{
 
     public:
         Usuario(string n, string cp, string ende, string fon);
-        Usuario(const Usuario& U);
-        Usuario &operator= (const Usuario &u);
+        //Usuario(const Usuario& U);
+        //Usuario &operator= (const Usuario &u);
         void Printusuario(){cout<< nome <<", "<< cpf <<", "<< endereco <<", "<< fone << endl;}
         string getCPF(){return cpf;}
 };
@@ -37,9 +37,11 @@ class Publicacao{
     public:
         Publicacao(int cod, string tit, string ed, int an) : codPublicacao(cod), titulo(tit), editora(ed), ano(an){}
         void imprimirPub(){cout << "codigo publicacao: " << codPublicacao << ", titulo: " << titulo << ", editora: " << editora << ", ano: " << ano << endl;}
+        //Publicacao(const Publicacao& P);
         int getcod()const{return codPublicacao;}
         string gettitulo()const{return titulo;}
         int getano() const{return ano;}
+        string geted() const{return editora;}
 };
 
 
