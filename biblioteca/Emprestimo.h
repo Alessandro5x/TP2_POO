@@ -10,7 +10,7 @@ using namespace std;
 
 class ItemEmprestimo{
     private:
-        Date dataDevolucao;
+        Date dataDevolucao = null;
         Livro livro;
     public:
         ItemEmprestimo(Livro &L) : livro(L){}
