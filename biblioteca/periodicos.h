@@ -5,14 +5,14 @@
 #include "us_pub.h"
 using namespace std;
 
-class periodicos : Publicacao
+class periodicos : public Publicacao
 {
       private:
         string mes;
         int numEdicao;
     public:
-        periodicos(string m, int n) : mes(m), numEdicao(n){};
-        void imprimirperiodico() {cout<< "Mes: " << mes << " | Numero edicao:" << numEdicao << endl;}
+        periodicos(int cod, string tit, string ed, int an, string m, int n) : Publicacao(cod, tit, ed, an), mes(m), numEdicao(n){};
+        void imprimirperiodico() {cout<< "Mes: " << mes << " | Numero edicao:" << numEdicao << endl; imprimirPub();}
 };
 
 
