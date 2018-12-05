@@ -27,6 +27,7 @@ class Emprestimo
         Usuario usuario;
         vector <ItemEmprestimo> itens;
         static int proximoNumero;
+
     public:
        Emprestimo(Date DP, const Usuario &u);
        ~Emprestimo();
@@ -35,6 +36,9 @@ class Emprestimo
        void devolver(Livro &l);
        void devolverT();
        void PrintEmprestimo();
+
+       //gets
+       getNumero(){return numero;}
 };
 
 

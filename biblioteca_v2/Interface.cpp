@@ -69,27 +69,44 @@ void Interface::NEmprestimo(){
 }
 
 void Interface::NItemEmprestimo(){
-    int nE, cl;
+    int nE, cl, i,j;
     cout<<"Insira o numero do emprestimo: ";
     cin>>nE;
     cout<<"Insira o codigo do livro: ";
     cin>> cl;
+    j = B.ProcuraLivro(cl);
+    i = B.ProcuraEmp(nE);
+    //B.getEmprestimos()[i].adicionaE(B.getPublicacoes()[j]);
 }
 
 void Interface::ExcluiUsuario(){
-
+    string cpf; int i;
+    cout<<"Escolha o CPF do usuario a ser deletado: ";
+    cin>>cpf;
+    i = B.ProcuraCPF(cpf);
+    B.deleteuser(B.getUsuarios()[i]);
 }
 
 void Interface::ExcluiLivro(){
-
+    int cod, i;
+    cout<<"Escolha o codigo do livro a ser excluido: ";
+    cin>>cod;
+    i = B.ProcuraLivro(cod);
 }
 
 void Interface::ExcluiPeriodico(){
-
+    int cod, i;
+    cout<<"Escolha o codigo do periodico a ser excluido: ";
+    cin>>cod;
+    i = B.ProcuraLivro(cod);
 }
 
 void Interface::ExcluiEmprestimo(){
-
+    int nE, i;
+    cout<<"Insira o numero do emprestimo: ";
+    cin>>nE;
+    i = B.ProcuraEmp(nE);
+    B.deleteemp(B.getEmprestimos()[i]);
 }
 
 void Interface::ExcluiItemEmprestimo(){

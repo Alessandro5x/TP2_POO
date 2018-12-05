@@ -17,6 +17,7 @@ class Usuario{
         Usuario(string n, string cp, string ende, string fon);
         void Printusuario(){cout<<"nome: "<< nome <<", cpf: "<< cpf <<", endereco: "<< endereco <<", fone: "<< fone << endl;}
         string getCPF(){return cpf;}
+        string getName(){ return nome;}
 };
 class Date{
     private:
