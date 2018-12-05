@@ -35,7 +35,7 @@ class Emprestimo
        void devolver(Livro &l);
        void devolverT();
        void printemprestimo(){for(int i = 0; i < itens.size(); i++){itens[i].printItemEmprestimo(); cout<<"\n";}}
-        getNumero(){return numero;}
+       int getNumero(){return numero;}
 };
 
 

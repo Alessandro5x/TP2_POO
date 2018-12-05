@@ -1,4 +1,5 @@
 #include<iostream>
+#include <fstream>
 #include "biblioteca.h"
 #include <vector>
 #include "us_pub.h"
@@ -77,6 +78,17 @@ vector<string> Biblioteca::searchtitle(string t){
         return result;
     }
 }
+vector<string> Biblioteca::searchautor(string a){
+    vector <string> result;
+    int aux=-1;
+    for (int i = 0;i<livros.size();i++){
+        aux = livros[i].getAutor().compare(a);
+        if(aux==a.size()-1){
+            result.push_back(livros[i].getAutor());
+        }
+        return result;
+    }
+}
 
 vector<Usuario> Biblioteca::getUsuarios(){
 
@@ -92,3 +104,24 @@ vector<Emprestimo> Biblioteca::getEmprestimos(){
 
     return emprestimos;
 }
+void Biblioteca::savefile(){
+    ofstream out("File.txt");
+    for(int i = 0;i < usuarios.size();i++){
+        out << "Usuarios: " << usuarios[i].getName() << ";";
+    }
+    for(int i = 0;i < livros.size();i++){
+        out << "livros: " << livros[i].gettitulo() << ",";
+    }
+    for(int i = 0;i < emprestimos.size();i++){
+        out << "Emprestimos: " << emprestimos[i].getNumero() << ",";
+    }
+}
+void Biblioteca::readfile(){
+    ifstream in("File.txt");
+    string s, line;
+    while(getline(in,line)){
+        s+=line + "\n";
+    }
+}
+
+

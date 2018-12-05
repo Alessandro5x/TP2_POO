@@ -29,10 +29,12 @@ class Biblioteca{
         void giveback(Emprestimo emp, Livro liv);// OlHAR A PARADA DA DATA
         void givebackall(Emprestimo &emp);
         vector <string> searchtitle(string t);
+        vector <string> searchautor(string a);// TALVEZ NAO TENHA AUTOR
         vector <Usuario> getUsuarios();
         vector <Publicacao> getPublicacoes();
         vector <Emprestimo> getEmprestimos();
-
+        void savefile();
+        void readfile();
         void printtodosusuarios(){for(int i = 0; i < usuarios.size(); i++){usuarios[i].Printusuario(); cout<<"\n";}}
 
 

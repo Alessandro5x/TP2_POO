@@ -106,12 +106,12 @@
 	"livro.h"
 	"Emprestimo.h"
 
-1543971996 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\us_pub.h
+1544053111 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\us_pub.h
 	<iostream>
 	<string>
 	<vector>
 
-1543971996 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\livro.h
+1544053004 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\livro.h
 	<iostream>
 	<string>
 	"excecoes.h"
@@ -121,7 +121,7 @@
 	<iostream>
 	<string>
 
-1544042943 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\emprestimo.h
+1544052812 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\emprestimo.h
 	<iostream>
 	<string>
 	<vector>
@@ -155,7 +155,7 @@
 	<string>
 	"us_pub.h"
 
-1544048556 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\biblioteca.h
+1544051761 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\novo master\tp2_poo-master\biblioteca\biblioteca.h
 	<iostream>
 	<vector>
 	"livro.h"

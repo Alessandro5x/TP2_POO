@@ -19,6 +19,7 @@ class Usuario{
         //Usuario &operator= (const Usuario &u);
         void Printusuario(){cout<< nome <<", "<< cpf <<", "<< endereco <<", "<< fone << endl;}
         string getCPF(){return cpf;}
+        string getName(){ return nome;}
 };
 class Date{
     private:
@@ -42,6 +43,7 @@ class Publicacao{
         string gettitulo()const{return titulo;}
         int getano() const{return ano;}
         string geted() const{return editora;}
+        virtual string getAutor(){ return "1";}
 };
 
 

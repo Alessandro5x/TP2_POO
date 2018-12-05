@@ -20,6 +20,7 @@ class Livro : public Publicacao
         void incrementar(int i);
         void decrementar(int d);
         bool operator== (const Livro &L);
+        virtual string getAutor()const{return autores;}
 };
 
 #endif
