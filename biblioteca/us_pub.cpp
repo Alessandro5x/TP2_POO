@@ -19,9 +19,6 @@ Usuario::Usuario(const Usuario &U){
     this->fone = U.fone;
 
 }
-string Usuario::getCPF(){
-    return cpf;
-}
 
 Usuario &Usuario::operator=(const Usuario &u){
 
