@@ -11,6 +11,7 @@ int Emprestimo::proximoNumero = 1; // descobrir como tirar o static daqui
 
 int main()
 {
+    /*
     Biblioteca B;
     Interface I(B);
     int y = 0;
@@ -18,7 +19,10 @@ int main()
         I.menu();
         I.casos();
     }
+*/
 
+//Date D;
+//D.printD();
 cout<<endl;
 
 //cout<<"FIM DOS TESTES DA INTERFACE--------------------------------------------------------"<<endl;

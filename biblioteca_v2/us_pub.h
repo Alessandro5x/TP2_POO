@@ -25,11 +25,13 @@ class Date{
         int mes;
         int ano;
     public:
-        Date(int d = 0, int m = 0, int a = 0) : dia(d), mes(m), ano(a){}
+        Date(int d, int m, int a) : dia(d), mes(m), ano(a){}
         Date();
         int getDay() { return dia; };
         int getMonth() { return mes; };
         int getYear() { return ano; }
+
+        //void printD(){cout<<dia<<"/"<< mes << "/" << ano;}
 };
 class Publicacao{
     private:

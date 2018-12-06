@@ -12,7 +12,7 @@ class ItemEmprestimo{
     private:
         Date dataDevolucao;
     public:
-        ItemEmprestimo(Livro &L) : livro(L){dataDevolucao = Date(0,0,0);}
+        ItemEmprestimo(Livro &L) : livro(L), dataDevolucao(0,0,0){}
         void printItemEmprestimo(){livro.imprimirlivro();}
         Livro livro;
 };
