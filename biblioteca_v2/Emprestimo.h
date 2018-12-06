@@ -36,6 +36,7 @@ class Emprestimo
        void devolver(Livro &l);
        void devolverT();
        void PrintEmprestimo();
+       //Livro EncontraL(int codig);
 
        //gets
        getNumero(){return numero;}

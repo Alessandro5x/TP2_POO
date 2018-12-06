@@ -42,6 +42,7 @@ class Publicacao{
         string gettitulo()const{return titulo;}
         int getano() const{return ano;}
         string geted() const{return editora;}
+        virtual string getAutor(){return "1";}
 };
 
 

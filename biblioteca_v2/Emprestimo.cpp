@@ -53,3 +53,13 @@ void Emprestimo::PrintEmprestimo(){
     }
     cout<<endl;
 }
+/*
+
+Livro Emprestimo::EncontraL(int cod){
+    for(int i = 0; i < itens.size(); i++){
+      if(cod == itens[i].livro.getcod()){
+        return (itens[i].livro);
+      }
+    }
+}
+*/

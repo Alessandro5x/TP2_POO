@@ -110,12 +110,53 @@ void Interface::ExcluiEmprestimo(){
 }
 
 void Interface::ExcluiItemEmprestimo(){
-
+    int nE, cod, i;
+    cout<<"Insira o numero do emprestimo: ";
+    cin>>nE;
+    cout<<"Insira o codigo do livro a ser excluido: ";
+    cin>> cod;
+    //excluir
 }
 
 void Interface::DevolverTodosLivros(){
-
+    int nE, i;
+    cout<<"Insira o numero do emprestimo: ";
+    cin>>nE;
+    i = B.ProcuraEmp(nE);
+    B.getEmprestimos()[nE].devolverT();
 }
+
+void Interface::DevolverUmLivro(){
+    int nE, i;
+    cout<<"Insira o numero do emprestimo: ";
+    cin>>nE;
+    i = B.ProcuraEmp(nE);
+    //B.getEmprestimos()[nE].devolverT();
+}
+
+void Interface::PublicacoesPorTitulo(){
+    string s;
+    vector <int> v;
+    cout<<"Entre com o titulo: ";
+    cin>>s;
+    v = B.searchtitle2(s);
+
+    //for(int i = 0; i < v.size(); i++){
+      //  B.getPublicacoes()[i].Print
+    //}
+}
+
+void Interface::LivrosPorAutor(){
+    string s;
+    vector <int> v;
+    cout<<"Entre com o autor: ";
+    cin>>s;
+    v = B.searchautor2(s);
+    //for(int i = 0; i < v.size(); i++){
+      //  B.getPublicacoes()[i].Print
+    //}
+}
+
 
 
 void Interface::casos(){
@@ -155,11 +196,11 @@ void Interface::casos(){
     break;
 
     case 'I':
-        cout<<"\npesquisar publicacoes por tittulo"<<endl;
+        void PublicacoesPorTitulo();
     break;
 
     case 'J':
-        cout<<"\npesquisar livros por autor"<<endl;
+        void LivrosPorAutor();
     break;
 
     case 'K':

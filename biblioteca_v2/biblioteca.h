@@ -38,7 +38,9 @@ class Biblioteca{
 
         //gets
         vector <string> searchtitle(string t);
+        vector <int> searchtitle2(string t);
         vector <string> searchautor(string a);// TALVEZ NAO TENHA AUTOR
+        vector <int> searchautor2(string a);
         vector <Usuario> getUsuarios();
         vector <Publicacao> getPublicacoes();
         vector <Emprestimo> getEmprestimos();

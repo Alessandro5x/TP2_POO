@@ -76,6 +76,41 @@ vector<string> Biblioteca::searchtitle(string t){
     }
 }
 
+vector<int> Biblioteca::searchtitle2(string t){
+    vector <int> result;
+    int aux=-1;
+    for (int i = 0;i<Pub.size();i++){
+        aux = Pub[i].gettitulo().compare(t);
+        if(aux==t.size()-1){
+            result.push_back(Pub[i].getcod());
+        }
+        return result;
+    }
+}
+
+vector<string> Biblioteca::searchautor(string a){
+    vector <string> result;
+    int aux=-1;
+    for (int i = 0;i<Pub.size();i++){
+        aux = Pub[i].getAutor().compare(a);
+        if(aux==a.size()-1){
+            result.push_back(Pub[i].getAutor());
+        }
+        return result;
+    }
+}
+
+vector<int> Biblioteca::searchautor2(string a){
+    vector <int> result;
+    int aux=-1;
+    for (int i = 0;i<Pub.size();i++){
+        aux = Pub[i].getAutor().compare(a);
+        if(aux==a.size()-1){
+            result.push_back(Pub[i].getcod());
+        }
+        return result;
+    }
+}
 //deletes
 void Biblioteca::deleteuser(Usuario &use){
     if (searchuser(use) >=0){
@@ -101,30 +136,6 @@ void Biblioteca::giveback(Emprestimo emp, Livro liv){
 void Biblioteca::givebackall(Emprestimo &emp){
     emp.devolverT();
 }
-
-
-/*
-int Biblioteca::ProcuraEmp(int n){
-     for(int i = 0; i <= emprestimos.size();i++){
-        if (cpf == emprestimos[i].getCPF()){
-            return i;
-    }else return -1;
- }
-}
-*/
-/*
-int Biblioteca::searchpub(Publicacao& pub){
-     for(int i = 0; i <= emprestimos.size();i++){
-        if(pub == itens[i].getL()){
-            return i;
-    }else return -1;
-}}
-
-
-void Biblioteca::deletepub(Publicacao& pub){
-    if()
-
-}*/
 
 vector<Usuario> Biblioteca::getUsuarios(){
 

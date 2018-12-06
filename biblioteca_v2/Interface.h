@@ -31,6 +31,10 @@ class Interface{
         void ExcluiEmprestimo();
         void ExcluiItemEmprestimo();
         void DevolverTodosLivros();
+        void DevolverUmLivro();
+
+        void PublicacoesPorTitulo();
+        void LivrosPorAutor();
 
         //IMPRESSOES
         void Imprimirusuarios(){cout<< "\nTodos usuarios:\n"; B.printtodosusuarios();}
