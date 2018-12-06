@@ -9,7 +9,8 @@ using namespace std;
 Emprestimo::Emprestimo(Date DP, const Usuario &u) : usuario(u),DataPrevDevolucao(DP){
     numero = proximoNumero;
     proximoNumero = proximoNumero + 1;
-    /*data emprestimo = do sistema;*/
+    Date corrente;
+    DataEmprestimo = corrente;
 }
 Emprestimo::~Emprestimo()
 {
