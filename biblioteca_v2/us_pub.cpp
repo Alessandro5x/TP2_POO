@@ -2,6 +2,7 @@
 #include <string>
 #include "us_pub.h"
 #include <vector>
+#include <ctime>
 using namespace std;
 
 Usuario::Usuario(string n, string cp, string ende, string fon){
