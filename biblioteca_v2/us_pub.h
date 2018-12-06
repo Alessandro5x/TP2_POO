@@ -27,14 +27,15 @@ class Date{
     public:
         Date(int d, int m, int a) : dia(d), mes(m), ano(a){}
         Date();
-        int getDay() { return dia; };
-        int getMonth() { return mes; };
-        int getYear() { return ano; }
-        int calcdias ();
+        int getDay() const { return dia; }
+        int getMonth()const { return mes; }
+        int getYear() const { return ano; }
+        int calcdias() const ;
+        Date &operator= (const Date &a);
         friend ostream& operator<< (ostream &out,const Date& a);
         int& operator- (const Date &a);
         Date &operator+ (const Date &a);
-        bool &operator< (const Date &a);
+        bool operator< (const Date &a);
 };
 class Publicacao{
     private:
