@@ -26,6 +26,10 @@ class Date{
         int ano;
     public:
         Date(int d = 0, int m = 0, int a = 0) : dia(d), mes(m), ano(a){}
+        Date();
+        int getDay() { return dia; };
+        int getMonth() { return mes; };
+        int getYear() { return ano; }
 };
 class Publicacao{
     private:
