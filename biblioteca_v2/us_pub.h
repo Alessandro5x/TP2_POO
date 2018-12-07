@@ -32,10 +32,11 @@ class Date{
         int getYear() const { return ano; }
         int calcdias() const ;
         Date &operator= (const Date &a);
-        friend ostream& operator<< (ostream &out,const Date& a);
         int& operator- (const Date &a);
-        Date &operator+ (const Date &a);
+        Date operator+ (const int &a);
         bool operator< (const Date &a);
+
+        friend ostream& operator<< (ostream &out,const Date& a);
 };
 class Publicacao{
     private:

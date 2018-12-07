@@ -24,6 +24,7 @@ class Emprestimo
         int numero;
         Date DataEmprestimo;
         Date DataPrevDevolucao;
+        Date DataPenalizacao;
         Usuario usuario;
         vector <ItemEmprestimo> itens;
         static int proximoNumero;

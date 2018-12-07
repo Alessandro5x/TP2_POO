@@ -219,14 +219,14 @@
 	"periodicos.h"
 	"biblioteca.h"
 
-1544109771 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\mais novo master\biblioteca_v2\emprestimo.h
+1544207377 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\mais novo master\biblioteca_v2\emprestimo.h
 	<iostream>
 	<string>
 	<vector>
 	"us_pub.h"
 	"livro.h"
 
-1544118761 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\mais novo master\biblioteca_v2\us_pub.h
+1544206707 c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\mais novo master\biblioteca_v2\us_pub.h
 	<iostream>
 	<string>
 	<vector>
@@ -256,7 +256,7 @@
 	"excecoes.h"
 	"us_pub.h"
 
-1544042304 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\mais novo master\biblioteca_v2\main.cpp
+1544206683 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\mais novo master\biblioteca_v2\main.cpp
 	<iostream>
 	<string>
 	"livro.h"
@@ -265,7 +265,7 @@
 	"emprestimo.h"
 	"interface.h"
 
-1544065592 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\mais novo master\biblioteca_v2\us_pub.cpp
+1544206707 source:c:\users\usuário\desktop\ufmg\3º semestre\poo\tp2\mais novo master\biblioteca_v2\us_pub.cpp
 	<iostream>
 	<string>
 	"us_pub.h"

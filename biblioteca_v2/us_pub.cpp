@@ -25,16 +25,16 @@ int Date::calcdias ()const {
     return aux;
 }
 // ----------- SOBRECARGAS----------
-/*
+
 ostream& operator<< (ostream& out,const Date& a){
         out << a.getDay();
-        out <<endl;
+        out << "/";
         out << a.getMonth();
-        out << endl;
+        out << "/";
         out << a.getYear();
-        out <<endl;
+        out << endl;
                 return out;
-}*/
+}
 
 Date &Date::operator=(const Date &a){
 
@@ -49,20 +49,28 @@ int& Date::operator -(const Date &a){
         aux1 = a.calcdias();
         aux = (a.calcdias() - this->calcdias());
     return aux;
-}/*
-Date &Date::operator+ (const Date &a){
-    Date d;
-    int diaproxmes;
-        if ((a.dia + this->dia)>30){
-            diaproxmes = ((dia+getDay())%30);
-            if (diaproxmes >30){
-                 getMonth() = (getMonth() +diaproxmes);
-            }
+}
+Date Date::operator+ (const int &a){
+    int auxdia = dia;
+    int auxmes = mes;
+    int auxano = ano;
+        if ((dia + a)>30){
+            auxmes =  mes+((dia + a)/30);
+            auxdia = (dia+a)%30;
+            auxano = ano;
+        }else {
+            auxdia = dia + a;
+            auxmes = mes;
+            auxano = ano;}
+        if (auxmes > 12){
+            auxdia = auxdia;
+            auxano =  ano + (auxmes/12);
+            auxmes = auxmes%12;
         }
-        if((getMonth()+admes)> 12){
-            adano = (getMonth()+admes)%12;
-        }
-}*/
+        Date d(auxdia,auxmes,auxano);
+        return d;
+}
+
 
 bool Date::operator< (const Date &a){
         if (a.calcdias() > calcdias())

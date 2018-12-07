@@ -32,13 +32,13 @@ void Emprestimo::excluiE(Livro &l){
 
 }
 void Emprestimo::devolver(Livro &l){
- /*   Date d;
+    Date d;
     int x;
     if (DataPrevDevolucao < d){
            x =  d-DataPrevDevolucao;
     } x = x*3;
     Date legal;
-    legal = d + x;*/
+    legal = d + x;
      l.incrementar(1);
     //DataPrevDevolucao = data de agora
 }
