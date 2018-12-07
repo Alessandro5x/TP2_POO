@@ -4,6 +4,7 @@
 #include "us_pub.h"
 #include "livro.h"
 #include "Emprestimo.h"
+
 using namespace std;
 
 Emprestimo::Emprestimo(Date DP, const Usuario &u) : usuario(u),DataPrevDevolucao(DP){
@@ -16,8 +17,10 @@ Emprestimo::~Emprestimo()
 }
 
 void Emprestimo::adicionaE(Livro &l){
+   // try{
     l.decrementar(1);
     itens.push_back(ItemEmprestimo(l));
+    //}catch (Error &)
 }
 
 void Emprestimo::excluiE(Livro &l){
@@ -32,21 +35,27 @@ void Emprestimo::excluiE(Livro &l){
 
 }
 void Emprestimo::devolver(Livro &l){
-    Date d;
+    Date atual;
     int x;
-    if (DataPrevDevolucao < d){
-           x =  d-DataPrevDevolucao;
-    } x = x*3;
-    Date legal;
-    legal = d + x;
-     l.incrementar(1);
-    //DataPrevDevolucao = data de agora
+        x = (atual -DataPrevDevolucao);
+    if(x >=1){
+        usuario.DataPenalizacao = usuario.NewPenalizacao(atual,x);
+    }
+    l.incrementar(1);
+    DataPrevDevolucao = atual;
 }
 void Emprestimo::devolverT(){
+    Date atual;
+    int x;
+        x = (atual -DataPrevDevolucao);
+    if(x >=1){
+        usuario.DataPenalizacao = usuario.NewPenalizacao(atual,x);
+    }
    for(int i = 0; i < itens.size(); i++){
         itens[i].livro.incrementar(1);
         //devolver(l);
    }
+   DataPrevDevolucao = atual;
 }
 
 void Emprestimo::PrintEmprestimo(){

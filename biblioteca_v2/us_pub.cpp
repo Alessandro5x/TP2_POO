@@ -24,7 +24,8 @@ int Date::calcdias ()const {
     aux = ((dia) + (mes*30) + (ano*365));
     return aux;
 }
-// ----------- SOBRECARGAS----------
+Date Usuario::NewPenalizacao(Date a, int dias){return a+(dias*3);}
+// --------------- SOBRECARGAS----------------
 
 ostream& operator<< (ostream& out,const Date& a){
         out << a.getDay();

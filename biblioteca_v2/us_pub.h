@@ -5,20 +5,6 @@
 #include <vector>
 using namespace std;
 
-class Usuario{
-
-    private:
-        string nome;
-        string cpf;
-        string endereco;
-        string fone;
-
-    public:
-        Usuario(string n, string cp, string ende, string fon);
-        void Printusuario(){cout<<"nome: "<< nome <<", cpf: "<< cpf <<", endereco: "<< endereco <<", fone: "<< fone << endl;}
-        string getCPF(){return cpf;}
-        string getName(){ return nome;}
-};
 class Date{
     private:
         int dia;
@@ -38,6 +24,23 @@ class Date{
 
         friend ostream& operator<< (ostream &out,const Date& a);
 };
+class Usuario{
+
+    private:
+        string nome;
+        string cpf;
+        string endereco;
+        string fone;
+
+    public:
+        Date DataPenalizacao;
+        Date NewPenalizacao(Date a, int dias);
+        Usuario(string n, string cp, string ende, string fon);
+        void Printusuario(){cout<<"nome: "<< nome <<", cpf: "<< cpf <<", endereco: "<< endereco <<", fone: "<< fone << endl;}
+        string getCPF(){return cpf;}
+        string getName(){ return nome;}
+};
+
 class Publicacao{
     private:
         int codPublicacao;

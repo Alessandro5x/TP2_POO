@@ -5,6 +5,7 @@
 #include "excecoes.h"
 #include "emprestimo.h"
 #include "interface.h"
+#include "us_pub.h"
 using namespace std;
 int Emprestimo::proximoNumero = 1; // descobrir como tirar o static daqui
 

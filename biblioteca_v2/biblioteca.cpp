@@ -78,6 +78,7 @@ void Biblioteca::deletepub(Publicacao *pub){
 
 }
 
+
 vector<string> Biblioteca::searchtitle(string t){
     vector <string> result;
     int aux=-1;

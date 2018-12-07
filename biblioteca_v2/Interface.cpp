@@ -62,10 +62,15 @@ void Interface::NEmprestimo(){
     cin>> Ucpf;
     cout<<"Insira a data prevista para devolucao: ";
     cin>> d >> m >> a;
+    //try{
     Date D(d,m,a);
     i = B.ProcuraCPF(Ucpf);
+   // Fazer o if aqui
     Emprestimo E(D, B.getUsuarios()[i]);
-    B.addemp(E);
+   // }catch(error &E){
+   //     E.out();  }
+
+       B.addemp(E);
 }
 
 void Interface::NItemEmprestimo(){
@@ -74,6 +79,10 @@ void Interface::NItemEmprestimo(){
     cin>>nE;
     cout<<"Insira o codigo do livro: ";
     cin>> cl;
+    //try{
+    //  Fazer o if aqui para ver se é periodico
+    // Ver o saldo do livro
+    // }catch(error &E)
     j = B.ProcuraLivro(cl);
     i = B.ProcuraEmp(nE);
     //B.getEmprestimos()[i].adicionaE(B.getPublicacoes()[j]);
@@ -84,6 +93,9 @@ void Interface::ExcluiUsuario(){
     cout<<"Escolha o CPF do usuario a ser deletado: ";
     cin>>cpf;
     i = B.ProcuraCPF(cpf);
+    //try{
+    //  Fazer o if aqui para ver se o usuario já fez algum emprestimo
+    // }catch(error &E)
     B.deleteuser(B.getUsuarios()[i]);
 }
 
@@ -92,6 +104,10 @@ void Interface::ExcluiLivro(){
     cout<<"Escolha o codigo do livro a ser excluido: ";
     cin>>cod;
     i = B.ProcuraLivro(cod);
+    //try{
+    //  Fazer o if aqui para ver se o livro ja foi emprestado
+    // }catch(error &E)
+
 }
 
 void Interface::ExcluiPeriodico(){
