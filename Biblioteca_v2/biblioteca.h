@@ -33,6 +33,7 @@ class Biblioteca{
         int searchuser(Usuario &user);
         int searchpub(Publicacao *pub);
         int searchemp(Emprestimo &emp);
+        bool itememprestimo(Publicacao *p);
 
         //pesquisas sendo utilizadas na interface
         int ProcuraLivro(int cod); //retorta a posicao i da localizacao do livro no vetor publicacao
