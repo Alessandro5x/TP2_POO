@@ -48,8 +48,8 @@ void Interface::Nlivro(){
     //getline(cin, tit);
     cin>> tit;
     cout<<"Insira a editora: ";
-    getline(cin,ed);
-    //cin>> ed;
+    // getline(cin,ed);
+    cin>> ed;
     cout<<"Insira o ano: ";
     cin>> an;
     //cin.ignore();
@@ -89,7 +89,7 @@ void Interface::NEmprestimo(){
     cin>> m;
     cout<<"ano: ";
     cin>>a;
-    try{ //Erro para ver se o cara tem data de penalização OK
+    try{ //Erro para ver se o cara tem data de penalizaÃ§Ã£o OK
     Date D(d,m,a);
     i = B.ProcuraCPF(Ucpf);
         Emprestimo E(D, B.getUsuarios()[i]);
@@ -107,7 +107,7 @@ void Interface::NItemEmprestimo(){
     cout<<"Insira o codigo do livro: ";
     cin>> cl;
     //try{
-    //  Fazer o if aqui para ver se é periodico
+    //  Fazer o if aqui para ver se Ã© periodico
     // Ver o saldo do livro
     // }catch(ErroG &E)
     j = B.ProcuraLivro(cl);
