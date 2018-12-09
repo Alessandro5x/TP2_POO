@@ -14,9 +14,15 @@ class ItemEmprestimo{
     public:
         Livro *livro;
         ItemEmprestimo(Livro *L) : livro(L),dataDevolucao(0,0,0){};
-        void printItemEmprestimo(){livro->imprimirlivro();}
-        int getCodigo(){ return livro->getcod();}
 
+        //set
+        SetDataDevolucao(Date D){dataDevolucao = D;}
+
+        //gets
+        int getCodigo(){return livro->getcod();}
+
+        //imprimir
+        void printItemEmprestimo(){cout<<"Data de devolucao: "<<dataDevolucao<<", "; livro->imprimirlivro();}
 };
 
 
@@ -43,11 +49,12 @@ class Emprestimo
        void PrintEmprestimo();
        void PrintItem(int i){itens[i].printItemEmprestimo();}
 
-       bool tememprestimo(Publicacao p);
+       int ProcuraItem(Livro *l);
 
        //gets
        int getNumero(){return numero;}
        vector <ItemEmprestimo> getVecItens(){return itens;}
+       void Menu_main();
 
 };
 

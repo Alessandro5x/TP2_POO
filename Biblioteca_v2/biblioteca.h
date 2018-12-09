@@ -25,7 +25,7 @@ class Biblioteca{
         void additememp(Emprestimo emp, ItemEmprestimo item);
 
         //funcoes sendo utilizadas na interface
-        void setEmpr(int i, Livro*l){emprestimos[i].adicionaE(l);} //seta um livro no emprestimo escolhido
+        void setEmpr(int i, Livro*l); //seta um livro no emprestimo escolhido
         void DevolverTudo(int i){emprestimos[i].devolverT();}      //Devolve todos livros no emprestimo escolhido
         void DevolverUm(int i, Livro *l){emprestimos[i].devolver(l);} //Devolve 1 livro no emprestimo escolhido
 

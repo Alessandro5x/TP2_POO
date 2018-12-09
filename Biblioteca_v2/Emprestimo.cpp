@@ -9,7 +9,7 @@ using namespace std;
 //construtor
 Emprestimo::Emprestimo(Date DP, Usuario u) : usuario(u),DataPrevDevolucao(DP){
     Date atual;
-    if (atual < u.DataPenalizacao){throw ErroG("Usuario com restricao");}
+    if (atual < u.DataPenalizacao){throw ErroG("-----Usuario com restricao-----");}
     numero = proximoNumero;
     proximoNumero = proximoNumero + 1;
 }
@@ -39,12 +39,16 @@ void Emprestimo::excluiE(Livro *l){
 
 
 void Emprestimo::devolver(Livro *l){
+    cout<< "chegou no devolver emprestimo";
      Date atual; int x;
      x = (atual -DataPrevDevolucao);
      if(x >=1){usuario.DataPenalizacao = usuario.NewPenalizacao(atual,x);}
 
+    int i = ProcuraItem(l);
+
      l->incrementar(1);
-     DataPrevDevolucao = atual;
+     itens[i].SetDataDevolucao(atual);
+     //cout<< DataPrevDevolucao;
 }
 
 
@@ -53,6 +57,14 @@ void Emprestimo::devolverT(){
    for(int i = 0; i < itens.size(); i++){
         devolver(itens[i].livro);
    }
+}
+
+//Procurar
+int Emprestimo::ProcuraItem(Livro *l){
+    for(int i = 0; i<itens.size();i++){
+        if(l->getcod()== itens[i].getCodigo()){return i;}
+    }
+    return -1;
 }
 
 //imprimir

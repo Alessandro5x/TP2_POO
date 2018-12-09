@@ -26,6 +26,16 @@ int Date::calcdias ()const {
 }
 Date Usuario::NewPenalizacao(Date a, int dias){return a+(dias*3);}
 
+//validacao
+bool Date::validadata(){
+    Date atual;
+    if (*this < atual){
+            throw ErroG("-----Data menor que a atual-----");
+            cout << "chegou aki" << endl;
+        }else { return true;
+    }
+}
+
 // --------------- SOBRECARGAS----------------
 
 ostream& operator<< (ostream& out,const Date& a){
@@ -34,7 +44,6 @@ ostream& operator<< (ostream& out,const Date& a){
         out << a.getMonth();
         out << "/";
         out << a.getYear();
-        //out << endl;
                 return out;
 }
 
