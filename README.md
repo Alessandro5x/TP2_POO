@@ -5,7 +5,8 @@ tratamento de erros
 arquivos
 documentacao
 
-Erro das strings
-acertar o tipo static
+Erro das strings,
+devolver, 
+acertar o tipo static, 
 erros menores que tem que verificar
 
