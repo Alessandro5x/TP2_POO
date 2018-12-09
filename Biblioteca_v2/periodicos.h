@@ -12,7 +12,7 @@ class periodicos : public Publicacao
         int numEdicao;
     public:
         periodicos(int cod, string tit, string ed, int an, string m, int n) : Publicacao(cod, tit, ed, an), mes(m), numEdicao(n){};
-        void imprimirperiodico() {cout<< "Mes: " << mes << " | Numero edicao:" << numEdicao << endl; imprimirPub();}
+        void imprimirperiodico() {cout<< "Mes: " << mes << " Numero edicao:" << numEdicao <<", "; imprimirPub();}
 };
 
 

@@ -6,31 +6,55 @@
 
 using namespace std;
 
+void Interface::Menu_main(){
+    Interface I(B);
+    int y = 0;
+    while(y == 0){
+        I.menu();
+        I.casos();
+    }
+}
+
 void Interface::Nusuario(){
     string nome, cpf, endereco, fone;
     cout<<"insira o nome:";
-    cin>>nome;
+    getline(cin, nome);
+    //cin>>nome;
     cout<<"insira o cpf:";
-    cin>>cpf;
+    //cin>>cpf;
+    getline(cin, cpf);
     cout<<"insira o endereco:";
-    cin>>endereco;
+    //cin>>endereco;
+    getline(cin, endereco);
     cout<<"insira o fone:";
-    cin>>fone;
+    getline(cin, fone);
+    //cin>>fone;
+    try{
     Usuario U(nome,cpf,endereco,fone);
     B.adduser(U);
+    }catch(ErroG &E){
+        E.out();
+        system("pause");
+    }
 }
 
 void Interface::Nlivro(){
     int cod; string tit; string ed; int an; string a; int q;
     cout<<"Insira o codigo: ";
     cin>> cod;
+    //cin.ignore();
     cout<<"Insira o titulo: ";
+    //cin.ignore();
+    //getline(cin, tit);
     cin>> tit;
     cout<<"Insira a editora: ";
-    cin>> ed;
+    getline(cin,ed);
+    //cin>> ed;
     cout<<"Insira o ano: ";
     cin>> an;
+    //cin.ignore();
     cout<<"Insira os autores: ";
+    //getline(cin,a);
     cin>> a;
     cout<<"Insira a quantidade de exemplares: ";
     cin>> q;
@@ -65,14 +89,15 @@ void Interface::NEmprestimo(){
     cin>> m;
     cout<<"ano: ";
     cin>>a;
-    //try{
+    try{ //Erro para ver se o cara tem data de penalização OK
     Date D(d,m,a);
     i = B.ProcuraCPF(Ucpf);
-    // Fazer o if aqui
-    Emprestimo E(D, B.getUsuarios()[i]);
+        Emprestimo E(D, B.getUsuarios()[i]);
     B.addemp(E);
-     // }catch(error &E){
-   //     E.out();  }
+    }catch(ErroG &E){
+        E.out();
+        system("pause");
+          }
 }
 
 void Interface::NItemEmprestimo(){
@@ -84,7 +109,7 @@ void Interface::NItemEmprestimo(){
     //try{
     //  Fazer o if aqui para ver se é periodico
     // Ver o saldo do livro
-    // }catch(error &E)
+    // }catch(ErroG &E)
     j = B.ProcuraLivro(cl);
     i = B.ProcuraEmp(nE);
     Livro *l = dynamic_cast<Livro*>(B.getPublicacoes()[j]);
@@ -96,10 +121,14 @@ void Interface::ExcluiUsuario(){
     cout<<"Escolha o CPF do usuario a ser deletado: ";
     cin>>cpf;
     i = B.ProcuraCPF(cpf);
-    //try{
-    //  Fazer o if aqui para ver se o usuario já fez algum emprestimo
-    // }catch(error &E)
+    try{
+
     B.deleteuser(B.getUsuarios()[i]);
+    }catch(ErroG &E){
+        E.out();
+        system("pause");
+
+    }
 
 }
 
@@ -108,10 +137,12 @@ void Interface::ExcluiLivro(){
     cout<<"Escolha o codigo do livro a ser excluido: ";
     cin>>cod;
     i = B.ProcuraLivro(cod);
+    try{ //  Erro se o livro ja foi emprestado
     B.deletepub(B.getPublicacoes()[i]);
-    //try{
-    //  Fazer o if aqui para ver se o livro ja foi emprestado
-    // }catch(error &E)
+    }catch(ErroG &E){
+        E.out();
+        system("pause");
+    }
 }
 
 void Interface::ExcluiPeriodico(){
@@ -127,7 +158,12 @@ void Interface::ExcluiEmprestimo(){
     cout<<"Insira o numero do emprestimo: ";
     cin>>nE;
     i = B.ProcuraEmp(nE);
+    try{
     B.deleteemp(B.getEmprestimos()[i]);
+    } catch (ErroG &E){
+        E.out();
+        system("pause");
+    }
 }
 
 void Interface::ExcluiItemEmp(){
@@ -192,10 +228,11 @@ void Interface::LivrosPorAutor(){
 }
 
 
-
 void Interface::casos(){
     char a;
-    cin >> a;
+    string b;
+    getline(cin, b);
+    a = b[0];
     switch(a){
     case 'A':
         Nusuario();
@@ -222,35 +259,52 @@ void Interface::casos(){
     break;
 
     case 'G':
-       ExcluiEmprestimo();
+       ExcluiLivro();
     break;
 
     case 'H':
-        ExcluiItemEmp();
+        ExcluiPeriodico();
     break;
 
     case 'I':
-        void PublicacoesPorTitulo();
+        ExcluiEmprestimo();
     break;
 
     case 'J':
-        void LivrosPorAutor();
+        ExcluiItemEmp();
     break;
 
     case 'K':
-        Imprimirusuarios();
+        DevolverTodosLivros();
     break;
 
     case 'L':
-        ListarPublicacoes();
+        DevolverUmLivro();
     break;
 
      case 'M':
-        ListarEmprestimos();
+        PublicacoesPorTitulo();
     break;
 
     case 'N':
-    exit(0);
+        LivrosPorAutor();
     break;
+
+    case 'O':
+        ListarUsuarios();
+    break;
+
+    case 'P':
+        ListarPublicacoes();
+    break;
+
+    case 'Q':
+        ListarEmprestimos();
+    break;
+
+    case 'R':
+        exit(0);
+    break;
+
     }
 }

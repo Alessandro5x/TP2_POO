@@ -14,7 +14,8 @@ class ItemEmprestimo{
     public:
         Livro *livro;
         ItemEmprestimo(Livro *L) : livro(L),dataDevolucao(0,0,0){};
-        void printItemEmprestimo(){livro->imprimirlivro();}
+        void printItemEmprestimo(){cout<<"Data de devolucao: "<<dataDevolucao<<", "; livro->imprimirlivro();}
+        int getCodigo(){ return livro->getcod();}
 
 };
 
@@ -30,7 +31,7 @@ class Emprestimo
         static int proximoNumero;
 
     public:
-       Emprestimo(Date DP, const Usuario &u);
+       Emprestimo(Date DP, Usuario u);
        ~Emprestimo();
 
        void adicionaE(Livro *l);
@@ -43,7 +44,10 @@ class Emprestimo
        void PrintItem(int i){itens[i].printItemEmprestimo();}
 
        //gets
-       getNumero(){return numero;}
+       int getNumero(){return numero;}
+       vector <ItemEmprestimo> getVecItens(){return itens;}
+       void Menu_main();
+
 };
 
 

@@ -10,14 +10,8 @@ int Emprestimo::proximoNumero = 1; // descobrir como tirar o static daqui
 
 int main()
 {
-
     Biblioteca B;
-    Interface I(B);
-    int y = 0;
-    while(y == 0){
-        I.menu();
-        I.casos();
-    }
-
+    Interface menu(B);
+    menu.Menu_main();
     return 0;
 }
