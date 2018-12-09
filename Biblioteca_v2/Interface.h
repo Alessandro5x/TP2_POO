@@ -40,6 +40,7 @@ class Interface{
         void Imprimirusuarios(){cout<< "\nTodos usuarios:\n"; B.printtodosusuarios();}
         void ListarPublicacoes(){cout<< "\nPublicacoes:\n"; B.PrintLivrosEPeriodicos();} //B.PrintTodasPublicacoes();}
         void ListarEmprestimos(){cout<<"\nEmprestimos:\n"; B.PrintTodosEmprestimos();}
+        void Menu_main();
 
 };
 

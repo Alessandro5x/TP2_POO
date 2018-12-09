@@ -6,6 +6,7 @@
 #include "livro.h"
 #include "periodicos.h"
 #include "Emprestimo.h"
+#include "excecoes.h"
 
 using namespace std;
 
@@ -15,9 +16,17 @@ Biblioteca::Biblioteca(){
     emprestimos = {};
 
 }
-void Biblioteca::adduser(Usuario &use){ usuarios.push_back(use);}
+void Biblioteca::adduser(Usuario &use){
+    if(ProcuraCPF(use.getCPF()) == -1){
+            usuarios.push_back(use);}
+    else throw ErroG("-----CPF ja cadastrado-----");
 
-void Biblioteca::addpub(Publicacao *pub){ Pub.push_back(pub);}
+}
+
+void Biblioteca::addpub(Publicacao *pub){
+    if(ProcuraLivro(pub->getcod()) == -1){
+        Pub.push_back(pub);}
+    else throw ErroG("-----Codigo ja cadastrado-----");}
 
 void Biblioteca::addemp(Emprestimo &emp){emprestimos.push_back(emp);}
 
@@ -35,7 +44,7 @@ int Biblioteca::searchuser(Usuario &user){
 }
 
 int Biblioteca::ProcuraCPF(string cpf){
-    for(int i = 0; i <= usuarios.size();i++){
+    for(int i = 0; i < usuarios.size();i++){
             if (cpf == usuarios[i].getCPF()){
             return i;
     }
@@ -44,7 +53,7 @@ int Biblioteca::ProcuraCPF(string cpf){
 }
 
 int Biblioteca::ProcuraLivro(int cod){
-    for(int i = 0; i <= Pub.size();i++){
+    for(int i = 0; i < Pub.size();i++){
         if (cod == Pub[i]->getcod()){
             return i;
     }
@@ -123,24 +132,30 @@ vector<int> Biblioteca::searchautor2(string a){
         return result;
     }
 }
+bool Biblioteca::itememprestimo(Publicacao *p){
+
+    for(int i = 0; i <emprestimos.size();i++){
+            for(int j = 0; j< emprestimos[i].getVecItens().size();j++){
+        if (p->getcod()== emprestimos[i].getVecItens()[j].getCodigo())
+            return true;
+        }}
+
+    return false;
+}
+
 //deletes
 void Biblioteca::deleteuser(Usuario &use){
     if (searchuser(use) >=0){
     usuarios.erase(usuarios.begin() + searchuser(use));}
-    else throw "Usuario com emprestimo";
+    else throw ErroG("Usuario com emprestimo");
 }
 
 void Biblioteca::deleteemp(Emprestimo& emp){
     if (searchemp(emp) >=0){
     emprestimos.erase(emprestimos.begin() + searchemp(emp));
-
     }
-    else throw "Nao existe esse emprestimo";
+    else throw ErroG("-----Nao existe esse emprestimo----");
 }
-/*
-void Biblioteca::DeletaEmp(int i){
-    emprestimos[i];
-}*/
 
 void Biblioteca::deleteitememp(Emprestimo emp, ItemEmprestimo item){
         emp.excluiE(item.livro);
@@ -149,7 +164,9 @@ void Biblioteca::deleteitememp(Emprestimo emp, ItemEmprestimo item){
 
 void Biblioteca::deletepub(Publicacao *pub){
 
-
+    if(itememprestimo(pub) ==  true){
+        throw ErroG("-----Tem emprestimo-----");
+    }
 }
 
 

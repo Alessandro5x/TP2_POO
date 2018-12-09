@@ -8,7 +8,7 @@ class ErroG{
     string tipo_erro;
     public:
     ErroG(const string &tp): tipo_erro(tp){};
-    void out(){cout << tipo_erro;};
+   void out(){ cout<< tipo_erro << endl;};
 };
 
 

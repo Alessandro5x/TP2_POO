@@ -6,6 +6,14 @@
 
 using namespace std;
 
+void Interface::Menu_main(){
+    Interface I(B);
+    int y = 0;
+    while(y == 0){
+        I.menu();
+        I.casos();
+    }
+}
 void Interface::Nusuario(){
     string nome, cpf, endereco, fone;
     cout<<"insira o nome:";
@@ -16,8 +24,14 @@ void Interface::Nusuario(){
     cin>>endereco;
     cout<<"insira o fone:";
     cin>>fone;
+    try{
     Usuario U(nome,cpf,endereco,fone);
     B.adduser(U);
+    }catch(ErroG &E){
+        E.out();
+        system("pause");
+        cout<< endl;
+    }
 }
 
 void Interface::Nlivro(){
@@ -34,7 +48,13 @@ void Interface::Nlivro(){
     cin>> a;
     cout<<"Insira a quantidade de exemplares: ";
     cin>> q;
+    try {
+
     B.addpub(new Livro(cod, tit, ed, an, a, q));
+    }catch (ErroG &E){
+        E.out();
+        system("pause");
+    }
 }
 
 void Interface::NPeriodico(){
@@ -65,14 +85,15 @@ void Interface::NEmprestimo(){
     cin>> m;
     cout<<"ano: ";
     cin>>a;
-    //try{
+    try{ //Erro para ver se o cara tem data de penalização OK
     Date D(d,m,a);
     i = B.ProcuraCPF(Ucpf);
-    // Fazer o if aqui
-    Emprestimo E(D, B.getUsuarios()[i]);
+        Emprestimo E(D, B.getUsuarios()[i]);
     B.addemp(E);
-     // }catch(error &E){
-   //     E.out();  }
+    }catch(ErroG &E){
+        E.out();
+        system("pause");
+          }
 }
 
 void Interface::NItemEmprestimo(){
@@ -84,7 +105,7 @@ void Interface::NItemEmprestimo(){
     //try{
     //  Fazer o if aqui para ver se é periodico
     // Ver o saldo do livro
-    // }catch(error &E)
+    // }catch(ErroG &E)
     j = B.ProcuraLivro(cl);
     i = B.ProcuraEmp(nE);
     Livro *l = dynamic_cast<Livro*>(B.getPublicacoes()[j]);
@@ -96,10 +117,14 @@ void Interface::ExcluiUsuario(){
     cout<<"Escolha o CPF do usuario a ser deletado: ";
     cin>>cpf;
     i = B.ProcuraCPF(cpf);
-    //try{
-    //  Fazer o if aqui para ver se o usuario já fez algum emprestimo
-    // }catch(error &E)
+    try{
+
     B.deleteuser(B.getUsuarios()[i]);
+    }catch(ErroG &E){
+        E.out();
+        system("pause");
+
+    }
 
 }
 
@@ -108,10 +133,12 @@ void Interface::ExcluiLivro(){
     cout<<"Escolha o codigo do livro a ser excluido: ";
     cin>>cod;
     i = B.ProcuraLivro(cod);
+    try{ //  Erro se o livro ja foi emprestado
     B.deletepub(B.getPublicacoes()[i]);
-    //try{
-    //  Fazer o if aqui para ver se o livro ja foi emprestado
-    // }catch(error &E)
+    }catch(ErroG &E){
+        E.out();
+        system("pause");
+    }
 }
 
 void Interface::ExcluiPeriodico(){
@@ -127,7 +154,12 @@ void Interface::ExcluiEmprestimo(){
     cout<<"Insira o numero do emprestimo: ";
     cin>>nE;
     i = B.ProcuraEmp(nE);
+    try{
     B.deleteemp(B.getEmprestimos()[i]);
+    } catch (ErroG &E){
+        E.out();
+        system("pause");
+    }
 }
 
 void Interface::ExcluiItemEmp(){
@@ -190,7 +222,6 @@ void Interface::LivrosPorAutor(){
       //  B.getPublicacoes()[i].Print
     //}
 }
-
 
 
 void Interface::casos(){

@@ -38,7 +38,7 @@ ostream& operator<< (ostream& out,const Date& a){
                 return out;
 }
 
-Date &Date::operator=(const Date &a){
+Date Date::operator=(const Date &a){
 
     this->dia = a.dia;
     this->mes = a.mes;

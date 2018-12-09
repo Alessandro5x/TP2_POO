@@ -23,7 +23,7 @@ class Date{
         int calcdias() const ;
 
          //sobrecargas
-        Date &operator= (const Date &a);
+        Date operator= (const Date &a);
         int& operator- (const Date &a);
         Date operator+ (const int &a);
         bool operator< (const Date &a);
