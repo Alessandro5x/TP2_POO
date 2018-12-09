@@ -7,6 +7,5 @@ documentacao
 
 Erro das strings
 acertar o tipo static
-void main
 erros menores que tem que verificar
 
