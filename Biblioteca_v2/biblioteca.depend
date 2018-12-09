@@ -1065,7 +1065,7 @@
 	"Emprestimo.h"
 	"excecoes.h"
 
-1544372115 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\biblioteca.cpp
+1544380965 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\biblioteca.cpp
 	<iostream>
 	<fstream>
 	"biblioteca.h"
@@ -1104,14 +1104,14 @@
 	<string>
 	"us_pub.h"
 
-1544371831 d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\emprestimo.h
+1544382638 d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\emprestimo.h
 	<iostream>
 	<string>
 	<vector>
 	"us_pub.h"
 	"livro.h"
 
-1544346512 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\emprestimo.cpp
+1544382638 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\emprestimo.cpp
 	<iostream>
 	<string>
 	<vector>
@@ -1124,7 +1124,7 @@
 	<string>
 	"excecoes.h"
 
-1544372785 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\interface.cpp
+1544381935 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\interface.cpp
 	<iostream>
 	<string>
 	<vector>
@@ -1148,7 +1148,7 @@
 	"excecoes.h"
 	"us_pub.h"
 
-1544372301 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\main.cpp
+1544381935 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\main.cpp
 	<iostream>
 	<string>
 	"livro.h"
@@ -1157,7 +1157,7 @@
 	"emprestimo.h"
 	"interface.h"
 
-1544346512 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\us_pub.cpp
+1544381004 source:d:\livros, exercícios e afins\poo\tp2\biblioteca_v3\us_pub.cpp
 	<iostream>
 	<string>
 	"us_pub.h"

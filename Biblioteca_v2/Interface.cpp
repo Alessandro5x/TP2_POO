@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 void Interface::Menu_main(){
     Interface I(B);
     int y = 0;
@@ -18,17 +19,17 @@ void Interface::Menu_main(){
 void Interface::Nusuario(){
     string nome, cpf, endereco, fone;
     cout<<"insira o nome:";
-    getline(cin, nome);
-    //cin>>nome;
+    //getline(cin, nome);
+    cin>>nome;
     cout<<"insira o cpf:";
-    //cin>>cpf;
-    getline(cin, cpf);
+    cin>>cpf;
+    //getline(cin, cpf);
     cout<<"insira o endereco:";
-    //cin>>endereco;
-    getline(cin, endereco);
+    cin>>endereco;
+    //getline(cin, endereco);
     cout<<"insira o fone:";
-    getline(cin, fone);
-    //cin>>fone;
+    //getline(cin, fone);
+    cin>>fone;
     try{
     Usuario U(nome,cpf,endereco,fone);
     B.adduser(U);
@@ -48,7 +49,7 @@ void Interface::Nlivro(){
     //getline(cin, tit);
     cin>> tit;
     cout<<"Insira a editora: ";
-    // getline(cin,ed);
+    //getline(cin,ed);
     cin>> ed;
     cout<<"Insira o ano: ";
     cin>> an;
@@ -89,7 +90,7 @@ void Interface::NEmprestimo(){
     cin>> m;
     cout<<"ano: ";
     cin>>a;
-    try{ //Erro para ver se o cara tem data de penalizaÃ§Ã£o OK
+    try{ //Erro para ver se o cara tem data de penalização OK
     Date D(d,m,a);
     i = B.ProcuraCPF(Ucpf);
         Emprestimo E(D, B.getUsuarios()[i]);
@@ -107,7 +108,7 @@ void Interface::NItemEmprestimo(){
     cout<<"Insira o codigo do livro: ";
     cin>> cl;
     //try{
-    //  Fazer o if aqui para ver se Ã© periodico
+    //  Fazer o if aqui para ver se é periodico
     // Ver o saldo do livro
     // }catch(ErroG &E)
     j = B.ProcuraLivro(cl);

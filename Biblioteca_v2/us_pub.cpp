@@ -34,7 +34,6 @@ ostream& operator<< (ostream& out,const Date& a){
         out << a.getMonth();
         out << "/";
         out << a.getYear();
-        //out << endl;
                 return out;
 }
 

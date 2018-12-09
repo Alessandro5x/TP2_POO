@@ -19,14 +19,17 @@ Biblioteca::Biblioteca(){
 void Biblioteca::adduser(Usuario &use){
     if((ProcuraCPF(use.getCPF())) == -1){
             usuarios.push_back(use);}
-    else throw ErroG("-----CPF ja cadastrado-----");
+    else{ throw ErroG("-----CPF ja cadastrado-----"); }
 
 }
 
 void Biblioteca::addpub(Publicacao *pub){
-    if(ProcuraLivro(pub->getcod()) == -1){
-        Pub.push_back(pub);}
-    else throw ErroG("-----Codigo ja cadastrado-----");}
+    int i = pub->getcod();
+    if(ProcuraLivro(i) == -1){
+        Pub.push_back(pub);
+        }
+    else {throw ErroG("-----Codigo ja cadastrado-----");}
+}
 
 void Biblioteca::addemp(Emprestimo &emp){emprestimos.push_back(emp);}
 
@@ -56,11 +59,12 @@ int Biblioteca::ProcuraCPF(string cpf){
 }
 
 int Biblioteca::ProcuraLivro(int cod){
-    for(int i = 0; i <= Pub.size();i++){
+    for(int i = 0; i < Pub.size();i++){
         if (cod == Pub[i]->getcod()){
             return i;
     }
- }return -1;
+ }
+ return -1;
 }
 
 int Biblioteca::searchemp(Emprestimo &emp){
