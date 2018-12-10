@@ -3,6 +3,7 @@
 #include<iostream>
 #include <string>
 #include <vector>
+#include "excecoes.h"
 using namespace std;
 
 class Date{
@@ -11,8 +12,9 @@ class Date{
         int mes;
         int ano;
     public:
-        Date(int d, int m, int a) : dia(d), mes(m), ano(a){}
         Date();
+        Date(int d, int m, int a) : dia(d), mes(m), ano(a){}
+
 
         //gets
         int getDay() const { return dia; }
@@ -28,6 +30,9 @@ class Date{
         Date operator+ (const int &a);
         bool operator< (const Date &a);
         friend ostream& operator<< (ostream &out,const Date& a);
+
+        //validacao
+        bool validadata();
 };
 
 class Usuario{

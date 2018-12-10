@@ -9,7 +9,7 @@ using namespace std;
 //construtor
 Emprestimo::Emprestimo(Date DP, Usuario u) : usuario(u),DataPrevDevolucao(DP){
     Date atual;
-    if (atual < u.DataPenalizacao){throw ErroG("Usuario com restricao");}
+    if (atual < u.DataPenalizacao){throw ErroG("-----Usuario com restricao-----");}
     numero = proximoNumero;
     proximoNumero = proximoNumero + 1;
 }

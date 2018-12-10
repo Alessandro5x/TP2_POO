@@ -35,6 +35,16 @@ void Biblioteca::addemp(Emprestimo &emp){emprestimos.push_back(emp);}
 
 //void Biblioteca::additememp(Emprestimo emp, ItemEmprestimo item){emp.adicionaE(item.livro);}
 
+void Biblioteca::setEmpr(int i, Livro*l){
+            if (l){
+                    if(l->getqtdeExemplares()){
+                        emprestimos[i].adicionaE(l);
+                        }
+                    else throw ErroG("-----Livro sem saldo-----");
+
+            }else{ throw ErroG("------Periodicos nao podem ser emprestados-----");}
+}
+
 //procuras
 int Biblioteca::searchuser(Usuario &user){
 
@@ -92,53 +102,29 @@ int Biblioteca::searchpub(Publicacao *pub){
 }}
 */
 
-vector<string> Biblioteca::searchtitle(string t){
-    vector <string> result;
-    int aux=-1;
-    for (int i = 0;i<Pub.size();i++){
-        aux = Pub[i]->gettitulo().compare(t);
-        if(aux==t.size()-1){
-            result.push_back(Pub[i]->gettitulo());
-        }
-        return result;
-    }
-}
-
-vector<int> Biblioteca::searchtitle2(string t){
+vector<int> Biblioteca::searchtitle(string a){
     vector <int> result;
-    int aux=-1;
     for (int i = 0;i<Pub.size();i++){
-        aux = Pub[i]->gettitulo().compare(t);
-        if(aux==t.size()-1){
-            result.push_back(Pub[i]->getcod());
-        }
+        Livro *l = dynamic_cast<Livro*>(getPublicacoes()[i]);
+            if(l && (l->gettitulo().compare(0, a.length(), a) == 0)){
+                result.push_back(Pub[i]->getcod());
+                        }
+                }
         return result;
-    }
 }
 
-vector<string> Biblioteca::searchautor(string a){
-    vector <string> result;
-    int aux=-1;
+vector<int> Biblioteca::searchautor(string a){
+   vector <int> result;
+
     for (int i = 0;i<Pub.size();i++){
-        aux = Pub[i]->getAutor().compare(a);
-        if(aux==a.size()-1){
-            result.push_back(Pub[i]->getAutor());
-        }
+        Livro *l = dynamic_cast<Livro*>(getPublicacoes()[i]);
+            if(l && (l->getAutor().compare(0, a.length(), a) == 0)){
+                result.push_back(Pub[i]->getcod());
+                        }
+                }
         return result;
-    }
 }
 
-vector<int> Biblioteca::searchautor2(string a){
-    vector <int> result;
-    int aux=-1;
-    for (int i = 0;i<Pub.size();i++){
-        aux = Pub[i]->getAutor().compare(a);
-        if(aux==a.size()-1){
-            result.push_back(Pub[i]->getcod());
-        }Livro *livro;
-        return result;
-    }
-}
 bool Biblioteca::itememprestimo(Publicacao *p){
 
     for(int i = 0; i <emprestimos.size();i++){
@@ -154,14 +140,14 @@ bool Biblioteca::itememprestimo(Publicacao *p){
 void Biblioteca::deleteuser(Usuario &use){
     if (searchuser(use) >=0){
     usuarios.erase(usuarios.begin() + searchuser(use));}
-    else throw ErroG("Usuario com emprestimo");
+    else throw ErroG("-----Usuario com emprestimo-----");
 }
 
 void Biblioteca::deleteemp(Emprestimo& emp){
     if (searchemp(emp) >=0){
     emprestimos.erase(emprestimos.begin() + searchemp(emp));
     }
-    else throw ErroG("Nao existe esse emprestimo");
+    else throw ErroG("-----Nao existe esse emprestimo-----");
 }
 
 void Biblioteca::deleteitememp(Emprestimo emp, ItemEmprestimo item){
@@ -171,7 +157,7 @@ void Biblioteca::deleteitememp(Emprestimo emp, ItemEmprestimo item){
 
 void Biblioteca::deletepub(Publicacao *pub){
     if(itememprestimo(pub) ==  true){
-        throw ErroG("Tem emprestimo");
+        throw ErroG("-----Tem emprestimo-----");
     }
     int i = ProcuraLivro(pub->getcod());
     Pub.erase(Pub.begin() + i);

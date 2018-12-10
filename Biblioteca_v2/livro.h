@@ -29,6 +29,9 @@ class Livro : public Publicacao
 
         //imprimir
         void imprimirlivro();
+
+        //gets
+        int getqtdeExemplares(){ return qtdeExemplares;}
 };
 
 #endif
