@@ -10,6 +10,7 @@ int Emprestimo::proximoNumero = 1; // descobrir como tirar o static daqui
 
 int main()
 {
+    //B.readfile();
     Biblioteca B;
     Interface menu(B);
     menu.Menu_main();

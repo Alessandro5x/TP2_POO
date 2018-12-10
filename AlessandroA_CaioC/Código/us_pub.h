@@ -49,7 +49,8 @@ class Usuario{
         //gets
         string getCPF(){return cpf;}
         string getName(){return nome;}
-
+        string getEnd(){return endereco;}
+        string getFone(){return fone;}
         //date
         Date DataPenalizacao;
         Date NewPenalizacao(Date a, int dias);

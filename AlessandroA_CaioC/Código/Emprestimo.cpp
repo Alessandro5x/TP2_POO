@@ -27,10 +27,10 @@ void Emprestimo::adicionaE(Livro *l){
 //excluir e devolver
 void Emprestimo::excluiE(Livro *l){
 
-    l->incrementar(1);
-
+Date D0(0,0,0);
     for(int i = 0; i < itens.size(); i++){
       if(l == itens[i].livro){
+            if(itens[i].getData().getDay() == 0 && itens[i].getData().getMonth() == 0 && itens[i].getData().getMonth() == 0 ){l->incrementar(1);}
         itens.erase(itens.begin()+i);
       }
     }

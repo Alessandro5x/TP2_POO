@@ -20,6 +20,7 @@ class ItemEmprestimo{
 
         //gets
         int getCodigo(){return livro->getcod();}
+        Date getData(){return dataDevolucao;}
 
         //imprimir
         void printItemEmprestimo(){cout<<"Data de devolucao: "<<dataDevolucao<<", "; livro->imprimirlivro();}
@@ -53,6 +54,10 @@ class Emprestimo
 
        //gets
        int getNumero(){return numero;}
+       int getDia(){return DataPrevDevolucao.getDay();}
+       int getMes(){return DataPrevDevolucao.getMonth();}
+       int getAno(){return DataPrevDevolucao.getYear();}
+       string getCPFU(){return usuario.getCPF();}
        vector <ItemEmprestimo> getVecItens(){return itens;}
 
 };

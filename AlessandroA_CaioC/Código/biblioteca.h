@@ -62,6 +62,7 @@ class Biblioteca{
 
         //validação
         bool validaProcura(int cod);
+        bool validaProcuraCPF(string cpf);
 
 };
 #endif // biblioteca.h

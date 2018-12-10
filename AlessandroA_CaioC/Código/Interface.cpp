@@ -118,12 +118,13 @@ void Interface::NEmprestimo(){
     cin>>a;
     cin.ignore();
 
-    try{ //Erro para ver se o cara tem data de penalização OK Erro se setar data anterior da atual
+    try{
         Date D(d,m,a);
         D.validadata();
-    i = B.ProcuraCPF(Ucpf);
+        i = B.ProcuraCPF(Ucpf);
+        B.validaProcuraCPF(Ucpf);
         Emprestimo E(D, B.getUsuarios()[i]);
-    B.addemp(E);
+        B.addemp(E);
     }catch(ErroG &E){
         E.out();
         system("pause");
@@ -368,6 +369,10 @@ void Interface::casos(){
 
     case 'R':
         exit(0);
+    break;
+
+    case 'Z':
+            B.savefile();
     break;
 
     }

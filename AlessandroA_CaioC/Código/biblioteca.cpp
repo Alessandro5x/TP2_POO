@@ -1,7 +1,9 @@
 #include<iostream>
 #include <fstream>
+#include <stdlib.h>
 #include "biblioteca.h"
 #include <vector>
+#include <sstream>
 #include "us_pub.h"
 #include "livro.h"
 #include "periodicos.h"
@@ -133,6 +135,12 @@ bool Biblioteca::validaProcura(int cod){
     }  else true;
 }
 
+bool Biblioteca::validaProcuraCPF(string cpf){
+    if(this->ProcuraCPF(cpf) == -1){
+        throw ErroG("-----CPF invalido-------");
+    } else true;
+}
+
 //deletes
 void Biblioteca::deleteuser(Usuario &use){
     if (searchuser(use) >=0){
@@ -179,30 +187,6 @@ vector<Emprestimo> Biblioteca::getEmprestimos(){
     return emprestimos;
 }
 
-//Arquivos
-
-void Biblioteca::savefile(){
-    ofstream out("File.txt");
-    for(int i = 0;i < usuarios.size();i++){
-        out << "Usuario: " << usuarios[i].getName() << ";";
-    }
-    for(int i = 0;i < Pub.size();i++){
-        out << "Publicacoe: " << Pub[i]->gettitulo() << ",";
-    }
-    for(int i = 0;i < emprestimos.size();i++){
-        out << "Emprestimo: " << emprestimos[i].getNumero() << ",";
-    }
-}
-void Biblioteca::readfile(){
-    ifstream in("File.txt");
-    string a, line;
-    while(getline(in,line)){
-        a+=line + "\n";
-        cout << a <<endl;
-
-    }
-}
-
 //impressoes
 void Biblioteca::printtodosusuarios(){
     for(int i = 0; i < usuarios.size(); i++){
@@ -238,5 +222,176 @@ void Biblioteca::PrintTodosEmprestimos(){
             cout<<"\n";
     }
 }
+
+//-------------------------Arquivos----------------------------------------------------------
+
+void Biblioteca::savefile(){
+    ofstream out("Usuarios.txt");
+    ofstream Publi("Publicacoes.txt");
+    ofstream Empre("Emprestimos.txt");
+    for(int i = 0;i < usuarios.size();i++){
+        out << usuarios[i].getName() << ";" << usuarios[i].getCPF()<< ";" ;
+        out << usuarios[i].getEnd() << ";" << usuarios[i].getFone();
+        out<<"\n";
+    }
+    for(int i = 0;i < Pub.size();i++){
+        Livro *l = dynamic_cast<Livro*>(Pub[i]);
+        if(l){
+        Publi<<"l"<<";"<<Pub[i]->getcod() << ";"<< Pub[i]->gettitulo() << ";" << Pub[i]->geted();
+        Publi<< ";" <<Pub[i]->getano()<<";"<<l->getAutor()<<";"<<l->getqtdeExemplares();
+        Publi<<"\n";
+        }
+        else{
+        periodicos *p = dynamic_cast<periodicos*>(Pub[i]);
+        Publi<<"p"<<";"<<Pub[i]->getcod() << ";"<< Pub[i]->gettitulo() << ";" << Pub[i]->geted();
+        Publi<< ";" << Pub[i]->getano()<<";"<<p->getMes()<<";"<<p->getnumEdicao();
+        Publi<<"\n";
+        }
+    }
+    for(int i = 0;i < emprestimos.size();i++){
+        Empre << emprestimos[i].getDia() << ";" << emprestimos[i].getMes() << ";" ;
+        Empre << emprestimos[i].getAno() << ";" << emprestimos[i].getCPFU();
+        Empre<<"\n";
+    }
+}
+
+void Biblioteca::readfile(){
+    ifstream usuario("Usuarios.txt");
+    ifstream pub("Publicacoes.txt");
+    ifstream perio("Periodicos.txt");
+    ifstream emp("Emprestimos.txt");
+    string a,linestream,b,linestream1;
+
+    if (usuario.is_open()) {
+        string line;
+        while(getline(usuario, line)){
+                stringstream linestream(line);
+                //variaveis:
+                string nome;
+                string cpf;
+                string endereco;
+                string fone;
+
+                //pegando do arquivo:
+                getline(linestream, nome, ';');
+                getline(linestream, cpf, ';');
+                getline(linestream, endereco, ';');
+                getline(linestream, fone, ';');
+                Usuario U(nome, cpf, endereco, fone);
+                //adicionando na biblioteca:
+                adduser(U);
+         }
+
+    }
+
+    if (pub.is_open()) {
+        string line;
+        while(getline(pub, line)){
+            stringstream linestream(line);
+
+                //variaveis:
+				string l_ou_p; //escolher se vai ser periodico ou livro
+				string scodigo;
+				int codigo;
+				string titulo;
+				string editora;
+				string sano;
+				int ano;
+				//informacao de livro
+				string autores;
+				string sqt_exemp;
+				int qt_exemp;
+				//informacao de periodico
+				string mes;
+				string snedicao;
+				int nedicao;
+
+				//lendo o arquivo e guardando nas strings
+
+				getline(linestream, l_ou_p, ';');
+				string comparal; comparal = 'l';
+				string comparap; comparap = 'p';
+
+				//caso for livro
+				if(l_ou_p.compare(comparal) == 0){
+
+                    getline(linestream, scodigo, ';');
+                    stringstream Tcodigo(scodigo);
+                    Tcodigo >> codigo;
+                    getline(linestream, titulo, ';');
+                    getline(linestream, editora, ';');
+                    getline(linestream, sano, ';');
+                    stringstream Tano(sano);
+                    Tano >> ano;
+
+                    getline(linestream, autores, ';');
+                    getline(linestream, sqt_exemp, ';');
+                    stringstream Tqt_exemp(sqt_exemp);
+                    Tqt_exemp >> qt_exemp;
+
+                    addpub(new Livro(codigo, titulo, editora, ano, autores, qt_exemp));
+				}
+
+				//caso for periodico
+
+				else if(l_ou_p.compare(comparap) == 0){
+                    getline(linestream, scodigo, ';');
+                    stringstream Tcodigo(scodigo);
+                    Tcodigo >> codigo;
+                    getline(linestream, titulo, ';');
+                    getline(linestream, editora, ';');
+                    getline(linestream, sano, ';');
+                    stringstream Tano(sano);
+                    Tano >> ano;
+
+                    getline(linestream, mes, ';');
+                    getline(linestream, snedicao, ';');
+                    stringstream Tnedicao(snedicao);
+                    Tnedicao >> nedicao;
+                    addpub(new periodicos(codigo, titulo, editora, ano, mes, nedicao));
+
+			}
+		}
+    }
+
+
+
+    if (emp.is_open()) {
+        string line;
+        while(getline(emp, line)){
+                stringstream linestream(line);
+                //variaveis
+                string cpf;
+                string sdia, smes, sano;
+                int dia, mes, ano;
+
+                //pegando do arquivo
+                getline(linestream, sdia, ';');
+                stringstream Tdia(sdia);
+                Tdia >> dia;
+
+                getline(linestream, smes, ';');
+                stringstream Tmes(smes);
+                Tmes >> mes;
+
+                getline(linestream, sano, ';');
+                stringstream Tano(sano);
+                Tano>>ano;
+
+                getline(linestream, cpf, ';');
+                try{
+                Date data(dia,mes,ano);
+                data.validadata();
+                int i = ProcuraCPF(cpf);
+                Emprestimo E(data, getUsuarios()[i]);
+                addemp(E);
+                }catch(ErroG &E){
+                E.out();
+                system("pause");
+                }
+            }
+     }
+}
+
 
 
